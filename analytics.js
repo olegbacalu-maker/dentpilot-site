@@ -4,7 +4,7 @@
    GA_ID empty = this file does nothing: no banner, no "Setări cookie" link.
    A banner with no tracker behind it would tell the visitor a lie. */
 (function () {
-  var GA_ID = '';
+  var GA_ID = 'G-LQ7S2EG89M';
   var KEY = 'dp-consent-v1';
   var ru = (document.documentElement.lang || '').indexOf('ru') === 0;
   var T = ru ? {

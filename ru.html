@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DentPilot — журнал стоматологической клиники</title>
+<meta name="description" content="Программа управления стоматологической клиникой в Молдове: расписание, карточки пациентов, одонтограмма, форма 043/e, статистика. Данные остаются в клинике. 499 MDL/мес.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230E9F8A'/%3E%3Cpath d='M8.7 5.4c-1.9 0-3.5 1.6-3.5 3.7 0 1.6.7 2.7 1.2 3.9.6 1.4.8 3.7 1.5 5.5.3.8 1.3.8 1.5 0 .5-1.6.7-3.3 1.3-4.3.5-.8 1.4-.8 1.9 0 .7 1 .9 2.7 1.3 4.3.2.8 1.3.8 1.5 0 .7-1.8.9-4.1 1.5-5.5.5-1.2 1.2-2.3 1.2-3.9 0-2.1-1.6-3.7-3.5-3.7-.9 0-1.6.4-2.6.4s-1.6-.4-2.6-.4z' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://dentpilot.md/ru.html">
+<link rel="alternate" hreflang="ro" href="https://dentpilot.md/">
+<link rel="alternate" hreflang="ru" href="https://dentpilot.md/ru.html">
+<link rel="alternate" hreflang="x-default" href="https://dentpilot.md/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DentPilot">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="ro_RO">
+<meta property="og:url" content="https://dentpilot.md/ru.html">
+<meta property="og:title" content="DentPilot — журнал стоматологической клиники">
+<meta property="og:description" content="Записи, карточки пациентов, одонтограмма и форма 043/e в одной программе. Данные остаются на компьютере клиники.">
+<meta property="og:image" content="https://dentpilot.md/shots/og-ru.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Главный экран DentPilot с расписанием дня">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DentPilot — журнал стоматологической клиники">
+<meta name="twitter:description" content="Записи, карточки пациентов, одонтограмма и форма 043/e в одной программе. Данные остаются на компьютере клиники.">
+<meta name="twitter:image" content="https://dentpilot.md/shots/og-ru.png">
+<style>
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('fonts/inter-cyrillic-ext.woff2') format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('fonts/inter-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('fonts/inter-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('fonts/inter-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@media (max-width:900px){.pr{grid-template-columns:1fr!important;gap:28px!important}.pr>*{grid-column:auto!important;grid-row:auto!important;align-self:auto!important;text-align:center!important}}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#16232B;font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:#0B7F70}a:hover{color:#0E9F8A}
+input::placeholder{color:#9AA8AD}
+@media (max-width:940px){.dp-nav{display:none!important}.dp-burger{display:inline-flex!important}.dp-headcta{display:none!important}}
+@media (max-width:960px){.zz{grid-template-columns:1fr!important;gap:36px!important}.zz-rev .zz-text{order:0!important}}
+[data-hover="background:#0B7F70;border-color:#0B7F70"]:hover{background:#0B7F70!important;border-color:#0B7F70!important}
+[data-hover="background:#0B7F70;border-color:#0B7F70;color:#FFFFFF"]:hover{background:#0B7F70!important;border-color:#0B7F70!important;color:#FFFFFF!important}
+[data-hover="border-color:#0E9F8A;color:#0B7F70"]:hover{border-color:#0E9F8A!important;color:#0B7F70!important}
+[data-hover="color:#0B7F70"]:hover{color:#0B7F70!important}
+[data-focus="border-color:#0E9F8A;outline:none"]:focus{border-color:#0E9F8A!important;outline:none!important}
+[data-hover="color:#16232B"]:hover{color:#16232B!important}
+.faq-open .faq-q svg{transform:rotate(180deg)!important}
+
+
+/* DentPilot premium SaaS redesign v2 */
+:root{--dp-ink:#10201f;--dp-muted:#647572;--dp-line:#dfe9e6;--dp-teal:#0e9f8a;--dp-teal-dark:#087968;--dp-mint:#e9f8f4;--dp-bg:#f7faf9;--dp-deep:#092b27}
+body{background:#fff;color:var(--dp-ink)}
+::selection{background:#bceee5;color:#073a33}
+.dp-hero{position:relative;overflow:hidden;padding:clamp(64px,8vw,104px) 0 0!important;background:radial-gradient(circle at 50% 8%,rgba(14,159,138,.11),transparent 32%),linear-gradient(180deg,#fbfefd 0%,#fff 72%)}
+.dp-hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(14,159,138,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(14,159,138,.035) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 72%);pointer-events:none}
+.dp-hero>div{position:relative;z-index:1}
+.dp-eyebrow{display:inline-flex!important;align-items:center;gap:8px!important;margin:0 auto 20px!important;padding:7px 11px!important;border:1px solid #cde9e3!important;border-radius:999px!important;background:rgba(233,248,244,.8)!important;color:var(--dp-teal-dark)!important;font-size:12px!important;font-weight:700!important;letter-spacing:.06em!important;text-transform:uppercase!important}
+.dp-eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--dp-teal);box-shadow:0 0 0 4px rgba(14,159,138,.12)}
+.dp-hero h1{color:var(--dp-ink)!important;font-size:clamp(42px,6.2vw,68px)!important;line-height:1.02!important;letter-spacing:-.045em!important;font-weight:760!important;max-width:850px!important}
+.dp-hero h1 .accent{color:var(--dp-teal)}
+.dp-hero .lead{max-width:700px!important;font-size:clamp(17px,2vw,20px)!important;color:#5e716e!important;line-height:1.65!important}
+.dp-hero-actions a{border-radius:12px!important;padding:14px 22px!important;box-shadow:0 10px 24px -12px rgba(8,121,104,.65);transition:transform .2s,box-shadow .2s,background .2s}
+.dp-hero-actions a:first-child:hover{transform:translateY(-2px);box-shadow:0 16px 30px -14px rgba(8,121,104,.75)}
+.dp-hero-actions .secondary{background:rgba(255,255,255,.8)!important;border-color:#cddbd8!important;color:var(--dp-ink)!important;box-shadow:none!important}
+.dp-hero-actions .secondary:hover{border-color:#9ed8cd!important;color:var(--dp-teal-dark)!important;transform:translateY(-2px)}
+.dp-product-shot{margin-top:64px!important;border-radius:20px!important;border:1px solid #d9e7e3!important;box-shadow:0 2px 8px rgba(11,43,38,.05),0 38px 90px -28px rgba(8,66,57,.34)!important;background:#fff!important}
+.dp-product-shot>div:first-child{height:42px!important;background:#f4f8f7!important}
+.dp-product-shot img{transition:transform .5s ease}
+.dp-product-shot:hover img{transform:scale(1.008)}
+.dp-trust{margin-top:44px!important;padding:26px 0 62px!important;border-top:1px solid #e6efec!important;grid-template-columns:repeat(4,1fr)!important}
+.dp-trust>div{padding:0 18px;border-right:1px solid #e6efec}
+.dp-trust>div:last-child{border-right:0}
+.dp-trust span:last-child{font-size:13.5px!important;color:#405451!important}
+.dp-section-title{max-width:1140px!important;margin:0 auto!important;padding:0 24px!important}
+#functii{background:#fff!important;padding-top:clamp(72px,8vw,104px)!important}
+#functii>div>h2{font-size:clamp(30px,4vw,42px)!important;letter-spacing:-.035em!important}
+#functii>div>h2:after{content:"";display:block;width:44px;height:4px;border-radius:4px;background:var(--dp-teal);margin-top:16px}
+#functii>div>div{gap:16px!important;margin-top:38px!important}
+#functii>div>div>div{border-radius:18px!important;padding:25px!important;border-color:#e2ece9!important;box-shadow:0 2px 4px rgba(11,43,38,.025),0 16px 34px -24px rgba(11,43,38,.18)!important;transition:transform .2s,box-shadow .2s,border-color .2s;background:#fff!important}
+#functii>div>div>div:hover{transform:translateY(-3px);border-color:#b8ded6!important;box-shadow:0 14px 32px -22px rgba(8,121,104,.35)!important}
+#functii>div>div>div:nth-child(-n+3){background:linear-gradient(180deg,#f1fbf8,#fff)!important;border-color:#bde5dd!important}
+#functii h3{font-size:16.5px!important;letter-spacing:-.01em}
+#functii p{color:#687a77!important}
+.zz-img{border-radius:18px!important;border-color:#dce9e5!important;box-shadow:0 2px 6px rgba(11,43,38,.04),0 28px 65px -24px rgba(11,43,38,.28)!important}
+.zz-text h2{font-size:clamp(28px,3.6vw,38px)!important;letter-spacing:-.035em!important}
+.zz-text>div:first-child{font-size:11px!important;letter-spacing:.12em!important}
+#legea-195{background:linear-gradient(135deg,#082b26,#0d3b34)!important;position:relative;overflow:hidden}
+#legea-195:before{content:"";position:absolute;width:500px;height:500px;right:-180px;top:-220px;border-radius:50%;background:rgba(30,201,174,.12);filter:blur(5px)}
+#preturi{background:#fbfdfc!important}
+#preturi .pr>div:first-child h2{font-size:clamp(30px,4vw,42px)!important;letter-spacing:-.035em!important}
+#preturi .pr>div:nth-child(2){border-color:#b8ddd6!important;border-radius:22px!important;box-shadow:0 2px 7px rgba(11,43,38,.05),0 30px 70px -25px rgba(8,121,104,.25)!important;position:relative;overflow:hidden}
+#preturi .pr>div:nth-child(2):before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,#0e9f8a,#64d6c4)}
+#preturi .pr>div:nth-child(2) a{border-radius:12px!important;box-shadow:0 12px 24px -14px rgba(8,121,104,.65)}
+#cum-incepem{background:#f5faf8!important}
+#cum-incepem h2,#faq h2,#contact h2{font-size:clamp(30px,4vw,42px)!important;letter-spacing:-.035em!important}
+#cum-incepem>div>div>div{border-radius:17px!important;border-color:#dfeae7!important;padding:25px!important;box-shadow:0 10px 26px -22px rgba(11,43,38,.22)!important}
+#faq>div>div>div{border-color:#dfe9e6!important;border-radius:16px!important;overflow:hidden}
+#contact{background:linear-gradient(180deg,#fff,#f5faf8)!important}
+#contact>div>div{border-color:#cfe3de!important;border-radius:20px!important;box-shadow:0 20px 50px -25px rgba(11,43,38,.22)!important}
+#contact input{border-radius:12px!important;border-color:#d3e1de!important;padding:14px 15px!important}
+#contact button{border-radius:12px!important;box-shadow:0 12px 25px -14px rgba(8,121,104,.7)}
+footer{background:#f5faf8!important}
+@media(max-width:760px){.dp-trust{grid-template-columns:1fr 1fr!important;gap:20px!important}.dp-trust>div:nth-child(2){border-right:0}.dp-trust>div{padding:0 4px}.dp-hero h1{font-size:clamp(38px,11vw,54px)!important}.dp-product-shot{margin-top:44px!important;border-radius:14px!important}.dp-hero{padding-top:54px!important}}
+@media(max-width:520px){.dp-trust{grid-template-columns:1fr!important}.dp-trust>div{border-right:0!important;border-bottom:1px solid #e6efec;padding:10px 0 18px}.dp-trust>div:last-child{border-bottom:0}}
+
+</style>
+</head>
+<body>
+<div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px) saturate(1.2);border-bottom:1px solid #E6EDEB">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;gap:28px">
+    <a href="#" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:#16232B">
+      <span style="width:34px;height:34px;flex:none;border-radius:9px;background:#0E9F8A;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 3.8C5.9 3.8 4 5.7 4 8.2c0 1.9.8 3.2 1.4 4.7.7 1.7 1 4.4 1.8 6.6.3.9 1.5.9 1.8 0 .6-1.9.8-4 1.6-5.2.6-.9 1.7-.9 2.3 0 .8 1.2 1 3.3 1.6 5.2.3.9 1.5.9 1.8 0 .8-2.2 1.1-4.9 1.8-6.6.6-1.5 1.4-2.8 1.4-4.7 0-2.5-1.9-4.4-4.2-4.4-1.1 0-1.9.5-3.1.5s-2-.5-3.2-.5z"></path></svg>
+      </span>
+      <span style="font-size:18px;font-weight:700;letter-spacing:-0.02em">DentPilot</span>
+    </a>
+    <nav class="dp-nav" style="display:flex;gap:24px;margin-left:auto">
+      <a href="#functii" style="font-size:14.5px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">Функции</a>
+      <a href="#preturi" style="font-size:14.5px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">Цены</a>
+      <a href="#legea-195" style="font-size:14.5px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">Закон 195</a>
+      <a href="#cum-incepem" style="font-size:14.5px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">Как начать</a>
+      <a href="#faq" style="font-size:14.5px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">FAQ</a>
+      <a href="#contact" style="font-size:14.5px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">Контакты</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px;margin-left:0">
+      <a class="dp-headcta" href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:#0E9F8A;color:#FFFFFF;border:1px solid #0E9F8A;border-radius:10px;padding:9px 16px;font-size:14px;font-weight:600;text-decoration:none" data-hover="background:#0B7F70;border-color:#0B7F70;color:#FFFFFF">Запросить презентацию</a>
+      <div style="display:flex;border:1px solid #E6EDEB;border-radius:9px;overflow:hidden"><a href="index.html" style="padding:7px 11px;font-size:13px;font-weight:600;font-family:inherit;background:transparent;color:#5B6B72;text-decoration:none" data-hover="color:#16232B">RO</a><span style="padding:7px 11px;font-size:13px;font-weight:600;font-family:inherit;background:#E9F6F3;color:#0B7F70">RU</span></div>
+      <button type="button" class="dp-burger" onclick="dpMenu()" aria-label="Меню" style="display:none;width:38px;height:38px;align-items:center;justify-content:center;border:1px solid #E6EDEB;border-radius:9px;background:#FFFFFF;color:#16232B;cursor:pointer">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+      </button>
+    </div>
+  </div>
+  <div id="dpmenu" hidden>
+    <div style="position:absolute;top:100%;left:0;right:0;background:#FFFFFF;border-bottom:1px solid #E6EDEB;box-shadow:0 18px 40px -18px rgba(11,43,38,.25);padding:6px 24px 20px">
+      <a href="#functii" onclick="dpMenu(0)" style="display:block;padding:13px 2px;border-bottom:1px solid #F0F4F3;font-size:15.5px;font-weight:500;color:#16232B;text-decoration:none">Функции</a>
+      <a href="#preturi" onclick="dpMenu(0)" style="display:block;padding:13px 2px;border-bottom:1px solid #F0F4F3;font-size:15.5px;font-weight:500;color:#16232B;text-decoration:none">Цены</a>
+      <a href="#legea-195" onclick="dpMenu(0)" style="display:block;padding:13px 2px;border-bottom:1px solid #F0F4F3;font-size:15.5px;font-weight:500;color:#16232B;text-decoration:none">Закон 195</a>
+      <a href="#cum-incepem" onclick="dpMenu(0)" style="display:block;padding:13px 2px;border-bottom:1px solid #F0F4F3;font-size:15.5px;font-weight:500;color:#16232B;text-decoration:none">Как начать</a>
+      <a href="#faq" onclick="dpMenu(0)" style="display:block;padding:13px 2px;border-bottom:1px solid #F0F4F3;font-size:15.5px;font-weight:500;color:#16232B;text-decoration:none">FAQ</a>
+      <a href="#contact" onclick="dpMenu(0)" style="display:block;padding:13px 2px;font-size:15.5px;font-weight:500;color:#16232B;text-decoration:none">Контакты</a>
+      <a href="#contact" onclick="dpMenu(0)" style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;background:#0E9F8A;color:#FFFFFF;border-radius:10px;padding:13px 16px;font-size:15px;font-weight:600;text-decoration:none">Запросить презентацию</a>
+    </div>
+  </div>
+</div>
+
+<section class="dp-hero" style="padding:clamp(48px,6vw,76px) 0 0">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px">
+    <div style="max-width:840px;margin:0 auto;text-align:center">
+      <div class="dp-eyebrow">Program pentru clinici stomatologice din Moldova</div>
+      <h1 style="margin:0;font-size:clamp(34px,5.2vw,56px);font-weight:700;letter-spacing:-0.03em;line-height:1.08;text-wrap:balance;color:#0E9F8A">Ваша клиника.<br><span class="accent">Проще. Организованнее.</span></h1>
+      <p style="margin:22px auto 0;max-width:680px;font-size:clamp(16px,2vw,18.5px);line-height:1.6;color:#5B6B72;text-wrap:pretty">Записи, карты пациентов, одонтограмма, пародонтограмма и медицинские документы — в одной системе, созданной для вашей клиники.</p>
+      <div class="dp-hero-actions" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;background:#0E9F8A;color:#FFFFFF;border:1px solid #0E9F8A;border-radius:10px;padding:14px 26px;font-size:16px;font-weight:600;text-decoration:none" data-hover="background:#0B7F70;border-color:#0B7F70;color:#FFFFFF">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5c0-.6.4-1 1-1h2.6c.4 0 .8.3.9.7l.9 3.1c.1.4 0 .8-.3 1L8.6 9.7a12.3 12.3 0 005.7 5.7l1.4-1.5c.2-.3.6-.4 1-.3l3.1.9c.4.1.7.5.7.9V18c0 .6-.5 1-1 1C11.9 19 5 12.1 5 4.5z"></path></svg>
+          Запросить презентацию</a>
+        <a class="secondary" href="#functii" style="display:inline-flex;align-items:center;gap:10px;background:#FFFFFF;color:#16232B;border:1px solid #D8E2DF;border-radius:10px;padding:14px 26px;font-size:16px;font-weight:600;text-decoration:none">Посмотреть возможности <span aria-hidden="true">→</span></a>
+        <!-- Кнопка видео: записать Loom по сценарию design\loom-scenariu.md,
+             заменить LOOM_URL и убрать обёртку комментария.
+        <a href="LOOM_URL" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#FFFFFF;color:#16232B;border:1px solid #D8E2DF;border-radius:10px;padding:14px 26px;font-size:16px;font-weight:600;text-decoration:none" data-hover="border-color:#0E9F8A;color:#0B7F70">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M10 8.5l6 3.5-6 3.5z"></path></svg>
+          Смотреть презентацию</a>
+        -->
+      </div>
+      <p style="margin:16px 0 0;font-size:13.5px;color:#7C8B91">Презентация занимает ~15 минут и ни к чему не обязывает.</p>
+    </div>
+    <div class="dp-product-shot" style="max-width:1040px;margin:56px auto 0;border-radius:14px;border:1px solid #E6EDEB;background:#FFFFFF;box-shadow:0 2px 6px rgba(11,43,38,.05),0 30px 80px -20px rgba(11,43,38,.25);overflow:hidden">
+      <div style="display:flex;align-items:center;height:38px;padding:0 14px;background:#F6F9F8;border-bottom:1px solid #E6EDEB">
+        <span style="display:flex;gap:6px"><span style="width:10px;height:10px;border-radius:50%;background:#DDE6E3"></span><span style="width:10px;height:10px;border-radius:50%;background:#DDE6E3"></span><span style="width:10px;height:10px;border-radius:50%;background:#DDE6E3"></span></span>
+        <span style="margin:0 auto;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:6px;padding:3px 14px;font-size:12px;color:#5B6B72">DentPilot · Главная панель</span>
+        <span style="width:42px;flex:none"></span>
+      </div>
+      <img width="2080" height="1118" src="shots/01_agenda.png" alt="DentPilot — главная панель с расписанием дня" fetchpriority="high" style="display:block;width:100%;height:auto">
+      
+    </div>
+    <div class="dp-trust" style="margin-top:40px;padding:32px 0 clamp(40px,5vw,56px);border-top:1px solid #E6EDEB;display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:22px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="width:40px;height:40px;flex:none;border-radius:10px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="12" rx="2"></rect><path d="M9 20.5h6M12 16.5v4M12 7v5m0 0l-2-2m2 2l2-2"></path></svg>
+        </span>
+        <span style="font-size:14.5px;font-weight:600;line-height:1.35">Устанавливается на компьютер клиники</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="width:40px;height:40px;flex:none;border-radius:10px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.4c0 4.4-2.9 7.6-7 9.3-4.1-1.7-7-4.9-7-9.3V5.8L12 3z"></path><path d="M9 11.8l2 2 4-4"></path></svg>
+        </span>
+        <span style="font-size:14.5px;font-weight:600;line-height:1.35">Данные не покидают клинику</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="width:40px;height:40px;flex:none;border-radius:10px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="18" height="11" rx="2"></rect><circle cx="12" cy="12" r="2.6"></circle><path d="M6.2 9.5h.01M17.8 14.5h.01"></path></svg>
+        </span>
+        <span style="font-size:14.5px;font-weight:600;line-height:1.35">499 MDL/мес — вся клиника, без ограничения пользователей</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="width:40px;height:40px;flex:none;border-radius:10px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5H7.5A1.5 1.5 0 006 5v14a1.5 1.5 0 001.5 1.5h9A1.5 1.5 0 0018 19V7.5L14 3.5z"></path><path d="M14 3.5V7.5h4M9.5 13.5l2 2 3.5-3.5"></path></svg>
+        </span>
+        <span style="font-size:14.5px;font-weight:600;line-height:1.35">Соответствует Закону 195/2024</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:clamp(64px,9vw,110px) 0;background:#F6F9F8">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px;display:grid;gap:clamp(72px,9vw,110px)">
+    <div class="zz" style="display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center">
+      <div class="zz-text">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B7F70">Карточка пациента</div>
+        <h2 style="margin:12px 0 0;font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">Карточка пациента и одонтограмма</h2>
+        <p style="margin:18px 0 0;font-size:16.5px;line-height:1.65;color:#5B6B72;text-wrap:pretty">Зубная формула FDI, с которой работают в один клик, план лечения с ценами и статусами, платежи и баланс, полная история визитов. Информированное согласие (ст. 13, Закон 263/2005) печатается прямо из плана. Здесь же <b>пародонтограмма</b>: 6 точек на зуб — глубина, рецессия, кровоточивость — плюс подвижность и фуркация, а BOP и карманы считаются сами. Она хранится осмотром с датой, поэтому два осмотра сравниваются и видно, что изменилось после лечения.</p>
+      </div>
+      <div class="zz-img" style="border-radius:14px;border:1px solid #E6EDEB;background:#FFFFFF;box-shadow:0 2px 6px rgba(11,43,38,.05),0 24px 60px -16px rgba(11,43,38,.2);overflow:hidden">
+        <div style="display:flex;align-items:center;height:36px;padding:0 14px;background:#F6F9F8;border-bottom:1px solid #E6EDEB">
+          <span style="display:flex;gap:6px"><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span></span>
+          <span style="margin:0 auto;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:6px;padding:2px 12px;font-size:11.5px;color:#5B6B72">Карточка пациента</span>
+          <span style="width:39px;flex:none"></span>
+        </div>
+        <img width="2048" height="1020" src="shots/02_odontograma.png" alt="Карточка пациента с одонтограммой FDI" loading="lazy" style="display:block;width:100%;height:auto">
+      </div>
+    </div>
+    <div class="zz zz-rev" style="display:grid;grid-template-columns:6fr 5fr;gap:64px;align-items:center">
+      <div class="zz-text" style="order:2">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B7F70">Медицинские документы</div>
+        <h2 style="margin:12px 0 0;font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">Форма 043/e — заполняется автоматически</h2>
+        <p style="margin:18px 0 0;font-size:16.5px;line-height:1.65;color:#5B6B72;text-wrap:pretty">Программа заполняет медицинскую карту 043/e (приказ МЗ 828/2011) из уже введённых данных: диагноз, зубная формула, журнал визитов. Отсюда же печатаются информированное согласие на план лечения (ст. 13, Закон 263/2005) и информирование пациента об обработке данных — документы, готовые к подписи, без ручного переписывания.</p>
+      </div>
+      <div class="zz-img" style="border-radius:14px;border:1px solid #E6EDEB;background:#FFFFFF;box-shadow:0 2px 6px rgba(11,43,38,.05),0 24px 60px -16px rgba(11,43,38,.2);overflow:hidden">
+        <div style="display:flex;align-items:center;height:36px;padding:0 14px;background:#F6F9F8;border-bottom:1px solid #E6EDEB">
+          <span style="display:flex;gap:6px"><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span></span>
+          <span style="margin:0 auto;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:6px;padding:2px 12px;font-size:11.5px;color:#5B6B72">Форма 043/e</span>
+          <span style="width:39px;flex:none"></span>
+        </div>
+        <img width="1552" height="1512" src="shots/03_fisa043.png" alt="Медицинская форма 043/e, заполненная автоматически" loading="lazy" style="display:block;width:100%;height:auto">
+      </div>
+    </div>
+    <div class="zz" style="display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center">
+      <div class="zz-text">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B7F70">Статистика для директора</div>
+        <h2 style="margin:12px 0 0;font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">Цифры клиники — всегда свежие</h2>
+        <p style="margin:18px 0 0;font-size:16.5px;line-height:1.65;color:#5B6B72;text-wrap:pretty">Записи, посещаемость, неявки, поступления и ожидаемый доход за любой период. Показатели каждого врача. Экспорт в Excel в один клик.</p>
+      </div>
+      <div class="zz-img" style="border-radius:14px;border:1px solid #E6EDEB;background:#FFFFFF;box-shadow:0 2px 6px rgba(11,43,38,.05),0 24px 60px -16px rgba(11,43,38,.2);overflow:hidden">
+        <div style="display:flex;align-items:center;height:36px;padding:0 14px;background:#F6F9F8;border-bottom:1px solid #E6EDEB">
+          <span style="display:flex;gap:6px"><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span></span>
+          <span style="margin:0 auto;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:6px;padding:2px 12px;font-size:11.5px;color:#5B6B72">Статистика</span>
+          <span style="width:39px;flex:none"></span>
+        </div>
+        <img width="1816" height="1634" src="shots/04_stats.png" alt="Статистика — записи, поступления, показатели врачей" loading="lazy" style="display:block;width:100%;height:auto">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="functii" style="padding:clamp(48px,6vw,76px) 0;scroll-margin-top:86px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px">
+    <h2 style="margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em">Возможности</h2>
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px">
+      <div style="background:#E9F6F3;border:1px solid #8CE8DA;border-radius:14px;padding:26px;box-shadow:0 1px 2px rgba(11,43,38,.04),0 8px 20px -10px rgba(11,43,38,.08)">
+        <span style="width:42px;height:42px;border-radius:11px;background:#FFFFFF;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 3.8C5.9 3.8 4 5.7 4 8.2c0 1.9.8 3.2 1.4 4.7.7 1.7 1 4.4 1.8 6.6.3.9 1.5.9 1.8 0 .6-1.9.8-4 1.6-5.2.6-.9 1.7-.9 2.3 0 .8 1.2 1 3.3 1.6 5.2.3.9 1.5.9 1.8 0 .8-2.2 1.1-4.9 1.8-6.6.6-1.5 1.4-2.8 1.4-4.7 0-2.5-1.9-4.4-4.2-4.4-1.1 0-1.9.5-3.1.5s-2-.5-3.2-.5z"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Одонтограмма FDI</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">состояния зуба и поверхностей, история по каждому зубу</p>
+      </div>
+      <div style="background:#E9F6F3;border:1px solid #8CE8DA;border-radius:14px;padding:26px;box-shadow:0 1px 2px rgba(11,43,38,.04),0 8px 20px -10px rgba(11,43,38,.08)">
+        <span style="width:42px;height:42px;border-radius:11px;background:#FFFFFF;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3.5H7.5A1.5 1.5 0 006 5v14a1.5 1.5 0 001.5 1.5h9A1.5 1.5 0 0018 19V7.5L14 3.5z"></path><path d="M14 3.5V7.5h4M9 12h6M9 15.5h6"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Форма 043/e</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">заполняется автоматически, готова к печати</p>
+      </div>
+      <div style="background:#E9F6F3;border:1px solid #8CE8DA;border-radius:14px;padding:26px;box-shadow:0 1px 2px rgba(11,43,38,.04),0 8px 20px -10px rgba(11,43,38,.08)">
+        <span style="width:42px;height:42px;border-radius:11px;background:#FFFFFF;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="10.5" height="8" rx="1.5"></rect><path d="M5.5 16.5h4.5M7.75 13v3.5"></path><rect x="15" y="9" width="6.5" height="9" rx="1.5"></rect><path d="M17 20.5h2.5"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Второй компьютер</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">регистратура и кабинет работают в одном журнале по сети клиники</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"></rect><path d="M3.5 9.5h17M8 3v4M16 3v4"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">День и неделя в расписании</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">все врачи на одном экране, цветные статусы, перенос перетаскиванием</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="8.5" cy="10.5" r="1.8"></circle><path d="M6 15.5c.5-1.5 1.4-2.3 2.5-2.3s2 .8 2.5 2.3M14 9.5h4M14 13h4"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Карточки пациентов</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">мгновенный поиск, история, приложенные документы</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4.5" width="14" height="16.5" rx="2"></rect><path d="M9 4.5v-1A1 1 0 0110 2.5h4a1 1 0 011 1v1M8.5 10.5h7M8.5 14h7M8.5 17.5h4"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">План лечения</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">цены, статусы, печатное информированное согласие</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"></path><rect x="6" y="11" width="3.2" height="6" rx=".8"></rect><rect x="10.4" y="7" width="3.2" height="10" rx=".8"></rect><rect x="14.8" y="13" width="3.2" height="4" rx=".8"></rect></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Статистика и касса</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">поступления, посещаемость, ежедневный кассовый отчёт</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="3.5"></circle><path d="M10.5 12.5L19 4M15.5 7.5L18 10M13 10l1.8 1.8"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Роли и журнал доступа</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">директор, регистратура, врач — у каждого свой пароль; видно, кто и когда входил</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="7" ry="2.7"></ellipse><path d="M5 5.5v6c0 1.5 3.1 2.7 7 2.7s7-1.2 7-2.7v-6M5 11.5v6c0 1.5 3.1 2.7 7 2.7s7-1.2 7-2.7v-6"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Шифрованные резервные копии</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">автоматический локальный бэкап, простое восстановление</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#F1F7F5;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4.5H7.5A1.5 1.5 0 006 6v13.5A1.5 1.5 0 007.5 21h9a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H15"></path><path d="M9.5 3h5a.5.5 0 01.5.5v2H9v-2a.5.5 0 01.5-.5z"></path><path d="M8.8 11.2l1.4 1.4 2.6-2.6M8.8 16.2l1.4 1.4 2.6-2.6"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Анамнез</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">12 вопросов, аллергии и лекарства; печатается анкетой на языке пациента и попадает в форму 043/e</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#F1F7F5;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 3.5H7.5A1.5 1.5 0 006 5v14a1.5 1.5 0 001.5 1.5h9A1.5 1.5 0 0018 19v-7.5"></path><path d="M9 12h5M9 15.5h4"></path><path d="M16.4 3.1l3.1 3.1-5 5H11.4V8.1z"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Дневник визита</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">жалобы, объективный статус, диагноз, лечение — по рубрикам формы 043/e, с шаблонами, которые не затирают написанное врачом</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#F1F7F5;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14.5h2.5l1.6-4 2 7 2-9.5 2 9 1.7-5 1.7 2.5H20"></path><path d="M4 19.5h16"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Пародонтограмма</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">6 точек на зуб: глубина, рецессия, кровоточивость, подвижность — с BOP% и карманами, посчитанными автоматически, от осмотра к осмотру</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#F1F7F5;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="10.5" width="15" height="9.5" rx="2"></rect><path d="M8 10.5V8a4 4 0 018 0v2.5"></path><path d="M12 14v2.5"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Шифрование картотеки</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">база шифруется на компьютере клиники; лист восстановления печатается и остаётся у директора</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#F1F7F5;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 10-2.5 5.8"></path><path d="M20 6.5V12h-5.5"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Автоматические обновления</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">программа сообщает о новой версии и обновляется сама — без выездов техника</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px">
+        <span style="width:42px;height:42px;border-radius:11px;background:#F1F7F5;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 5.5h15a1 1 0 011 1v11a1 1 0 01-1 1h-15a1 1 0 01-1-1v-11a1 1 0 011-1z"></path><path d="M9 10.6a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path><path d="M3.8 16.6l4.4-3.9 3 2.5 3.4-3 5.1 4.6"></path></svg>
+        </span>
+        <h3 style="margin:16px 0 7px;font-size:17px;font-weight:600">Документы и снимки</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">рентген, согласия, направления — в карточке пациента, с галереей и скачиванием</p>
+      </div>
+    </div>
+    <div style="margin-top:20px;background:#FFFFFF;border:1px dashed #BFD9D3;border-radius:14px;padding:22px 26px;display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+      <span style="width:42px;height:42px;flex:none;border-radius:11px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 01-8.5 8.5c-1.5 0-2.9-.38-4.1-1.05L3 20l1.05-5.4A8.46 8.46 0 013 11.5 8.5 8.5 0 0111.5 3 8.5 8.5 0 0121 11.5z"></path><path d="M8 10.5h8M8 13.5h5"></path></svg>
+      </span>
+      <div style="flex:1;min-width:min(100%,260px)">
+        <h3 style="margin:0 0 4px;font-size:17px;font-weight:600">SMS-напоминания пациентам</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">подтверждение записи и автоматические напоминания перед визитом — меньше неявок</p>
+      </div>
+      <span style="flex:none;background:#E9F6F3;color:#0B7F70;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px">Скоро</span>
+    </div>
+  </div>
+</section>
+
+<section id="legea-195" style="background:#0B2B26;color:#FFFFFF;padding:clamp(48px,6vw,76px) 0;scroll-margin-top:86px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:36px;flex-wrap:wrap">
+      <div style="max-width:660px;min-width:min(100%,300px)">
+        <h2 style="margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">Защита данных пациентов по Закону 195/2024</h2>
+        <p style="margin:18px 0 0;font-size:17px;line-height:1.65;color:rgba(214,236,231,.85);text-wrap:pretty">Закон 195/2024 уже действует: защита данных пациентов обязательна, штрафы — до 2 000 000 MDL. DentPilot соответствует требованиям закона и построен по принципу local-first:</p>
+      </div>
+      <div style="flex:none;transform:rotate(-3.5deg);border:2px solid rgba(140,232,218,.55);color:#8CE8DA;border-radius:10px;padding:12px 20px;text-align:center">
+        <div style="font-size:10.5px;font-weight:700;letter-spacing:.22em">ЗАКОН 195/2024</div>
+        <div style="margin-top:2px;font-size:22px;font-weight:700;letter-spacing:.03em;font-variant-numeric:tabular-nums">СООТВЕТСТВУЕТ</div>
+      </div>
+    </div>
+    <div style="margin-top:44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px 48px">
+      <div style="display:flex;gap:13px;align-items:flex-start">
+        <span style="width:26px;height:26px;flex:none;border-radius:50%;border:1.5px solid rgba(140,232,218,.5);color:#8CE8DA;display:inline-flex;align-items:center;justify-content:center;margin-top:1px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+        </span>
+        <span style="font-size:15.5px;line-height:1.55;color:rgba(236,248,245,.92)">Данные пациентов остаются на компьютере клиники — не на чужих серверах</span>
+      </div>
+      <div style="display:flex;gap:13px;align-items:flex-start">
+        <span style="width:26px;height:26px;flex:none;border-radius:50%;border:1.5px solid rgba(140,232,218,.5);color:#8CE8DA;display:inline-flex;align-items:center;justify-content:center;margin-top:1px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+        </span>
+        <span style="font-size:15.5px;line-height:1.55;color:rgba(236,248,245,.92)">Журнал доступа: видно, кто и когда открывал карточку</span>
+      </div>
+      <div style="display:flex;gap:13px;align-items:flex-start">
+        <span style="width:26px;height:26px;flex:none;border-radius:50%;border:1.5px solid rgba(140,232,218,.5);color:#8CE8DA;display:inline-flex;align-items:center;justify-content:center;margin-top:1px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+        </span>
+        <span style="font-size:15.5px;line-height:1.55;color:rgba(236,248,245,.92)">Удаление и анонимизация по запросу пациента</span>
+      </div>
+      <div style="display:flex;gap:13px;align-items:flex-start">
+        <span style="width:26px;height:26px;flex:none;border-radius:50%;border:1.5px solid rgba(140,232,218,.5);color:#8CE8DA;display:inline-flex;align-items:center;justify-content:center;margin-top:1px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+        </span>
+        <span style="font-size:15.5px;line-height:1.55;color:rgba(236,248,245,.92)">Экспорт архива пациента в один клик</span>
+      </div>
+      <div style="display:flex;gap:13px;align-items:flex-start">
+        <span style="width:26px;height:26px;flex:none;border-radius:50%;border:1.5px solid rgba(140,232,218,.5);color:#8CE8DA;display:inline-flex;align-items:center;justify-content:center;margin-top:1px">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg>
+        </span>
+        <span style="font-size:15.5px;line-height:1.55;color:rgba(236,248,245,.92)">Информирование пациентов и реестр учёта — печатные шаблоны включены</span>
+      </div>
+    </div>
+    <p style="margin:36px 0 0;font-size:13.5px;color:rgba(214,236,231,.55)">Оператором данных остаётся клиника; DentPilot не имеет доступа к вашим данным.</p>
+  </div>
+</section>
+
+<section id="preturi" style="padding:clamp(48px,6vw,76px) 0;scroll-margin-top:86px">
+  <div class="pr" style="max-width:1140px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr minmax(0,520px);gap:clamp(28px,4vw,56px)">
+    <div style="align-self:center"><h2 style="margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em">Цены</h2><p style="margin:18px 0 0;font-size:17px;line-height:1.6;color:#5B6B72;max-width:26em">Одна подписка на всю клинику — врачи, регистратура, второй компьютер. Без платы за пользователя.</p><p style="margin:14px 0 0;font-size:15px;color:#5B6B72">Первый месяц — бесплатно. Без долгосрочного контракта.</p></div>
+    <div style="grid-column:2;margin:0;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:16px;padding:clamp(28px,5vw,44px);text-align:center;box-shadow:0 2px 6px rgba(11,43,38,.05),0 24px 60px -16px rgba(11,43,38,.14)">
+      <span style="display:inline-block;background:#E9F6F3;color:#0B7F70;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px">Стартовая цена — для первых 10 клиник, затем 599 MDL/мес</span>
+      <div style="margin-top:22px;font-size:clamp(44px,7vw,58px);font-weight:700;letter-spacing:-0.03em;line-height:1;font-variant-numeric:tabular-nums">499 <span style="font-size:22px;font-weight:600;letter-spacing:0">MDL</span> <span style="font-size:19px;font-weight:500;color:#5B6B72;letter-spacing:0">/ месяц</span></div>
+      <div style="margin-top:16px;font-size:15.5px;color:#5B6B72">или <b style="color:#16232B;font-variant-numeric:tabular-nums">5 489 MDL / год</b> <span style="white-space:nowrap">(≈457 MDL/мес)</span></div>
+      <div style="margin-top:10px"><span style="display:inline-block;background:#E9F6F3;color:#0B7F70;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px">Экономия 499 MDL — один месяц бесплатно</span></div>
+      <div style="height:1px;background:#E6EDEB;margin:30px 0"></div>
+      <div style="display:inline-flex;flex-direction:column;gap:13px;text-align:left">
+        <div style="display:flex;gap:11px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E9F8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span style="font-size:15.5px">Пользователи без ограничений</span></div>
+        <div style="display:flex;gap:11px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E9F8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span style="font-size:15.5px">Все функции</span></div>
+        <div style="display:flex;gap:11px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E9F8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span style="font-size:15.5px">Автоматические обновления</span></div>
+        <div style="display:flex;gap:11px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E9F8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span style="font-size:15.5px">Установка и настройка включены</span></div>
+        <div style="display:flex;gap:11px;align-items:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0E9F8A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 12.5l4.5 4.5L19 7"></path></svg><span style="font-size:15.5px">Поддержка по телефону и в мессенджерах</span></div>
+      </div>
+      <a href="#contact" style="display:flex;align-items:center;justify-content:center;margin-top:32px;background:#0E9F8A;color:#FFFFFF;border:1px solid #0E9F8A;border-radius:10px;padding:14px 26px;font-size:16px;font-weight:600;text-decoration:none" data-hover="background:#0B7F70;border-color:#0B7F70;color:#FFFFFF">Запросить презентацию</a>
+    </div>
+    
+  </div>
+</section>
+
+<section id="cum-incepem" style="background:#F6F9F8;padding:clamp(48px,6vw,76px) 0;scroll-margin-top:86px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px">
+    <h2 style="margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em">Как начать</h2>
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px">
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px;box-shadow:0 1px 2px rgba(11,43,38,.04),0 8px 20px -10px rgba(11,43,38,.08)">
+        <span style="width:30px;height:30px;border-radius:9px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums">1</span>
+        <h3 style="margin:16px 0 7px;font-size:16.5px;font-weight:600">Звонок и презентация</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">вы видите программу на своём экране, 15 минут</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px;box-shadow:0 1px 2px rgba(11,43,38,.04),0 8px 20px -10px rgba(11,43,38,.08)">
+        <span style="width:30px;height:30px;border-radius:9px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums">2</span>
+        <h3 style="margin:16px 0 7px;font-size:16.5px;font-weight:600">Удалённая установка</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">через «Быструю помощь» Windows, без выезда; или с визитом, если вам удобнее</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px;box-shadow:0 1px 2px rgba(11,43,38,.04),0 8px 20px -10px rgba(11,43,38,.08)">
+        <span style="width:30px;height:30px;border-radius:9px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums">3</span>
+        <h3 style="margin:16px 0 7px;font-size:16.5px;font-weight:600">Документы по Закону 195</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">шаблоны заполняются в браузере и печатаются — проведём шаг за шагом</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:14px;padding:26px;box-shadow:0 1px 2px rgba(11,43,38,.04),0 8px 20px -10px rgba(11,43,38,.08)">
+        <span style="width:30px;height:30px;border-radius:9px;background:#E9F6F3;color:#0B7F70;display:inline-flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-variant-numeric:tabular-nums">4</span>
+        <h3 style="margin:16px 0 7px;font-size:16.5px;font-weight:600">Работайте</h3>
+        <p style="margin:0;font-size:14.5px;line-height:1.55;color:#5B6B72">обновления приходят автоматически; данные — ваши</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Секция «посмотреть демонстрацию» СКРЫТА до записи видео: без кнопки
+     Loom она дублировала форму в #contact. Вернуть = убрать hidden ниже.
+     Внутри секции есть свой комментарий с LOOM_URL, поэтому обернуть её
+     целиком в комментарий нельзя: вложенный закрылся бы первым же
+     закрывающим сочетанием и вывалил бы разметку на страницу. -->
+<section hidden id="demonstratie" style="padding:clamp(48px,6vw,76px) 0;scroll-margin-top:86px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px">
+    <div style="background:#F6F9F8;border:1px solid #E6EDEB;border-radius:18px;padding:clamp(44px,7vw,68px) 32px;text-align:center">
+      <h2 style="margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em">Хотите увидеть, как работает DentPilot?</h2>
+      <p style="margin:16px auto 0;max-width:660px;font-size:16.5px;line-height:1.65;color:#5B6B72;text-wrap:pretty">Запишитесь на бесплатную презентацию. Покажем DentPilot, основные функции и ответим на ваши вопросы.</p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px">
+        <!-- Кнопка видео: записать Loom по сценарию design\loom-scenariu.md,
+             заменить LOOM_URL и убрать обёртку комментария.
+        <a href="LOOM_URL" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;background:#FFFFFF;color:#16232B;border:1px solid #D8E2DF;border-radius:10px;padding:15px 30px;font-size:16.5px;font-weight:600;text-decoration:none" data-hover="border-color:#0E9F8A;color:#0B7F70">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M10 8.5l6 3.5-6 3.5z"></path></svg>
+          Смотреть презентацию</a>
+        -->
+        <a href="#contact" style="display:inline-flex;align-items:center;gap:10px;background:#0E9F8A;color:#FFFFFF;border:1px solid #0E9F8A;border-radius:10px;padding:15px 30px;font-size:16.5px;font-weight:600;text-decoration:none" data-hover="background:#0B7F70;border-color:#0B7F70;color:#FFFFFF">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4.5c0-.6.4-1 1-1h2.6c.4 0 .8.3.9.7l.9 3.1c.1.4 0 .8-.3 1L8.6 9.7a12.3 12.3 0 005.7 5.7l1.4-1.5c.2-.3.6-.4 1-.3l3.1.9c.4.1.7.5.7.9V18c0 .6-.5 1-1 1C11.9 19 5 12.1 5 4.5z"></path></svg>
+          Записаться на демонстрацию</a>
+      </div>
+      <p style="margin:14px 0 0;font-size:13.5px;color:#7C8B91">Бесплатно · ~15 минут · без обязательств</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding:clamp(48px,6vw,76px) 0;scroll-margin-top:86px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px">
+    <h2 style="margin:0;text-align:center;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em">FAQ</h2>
+    <div style="max-width:760px;margin:40px auto 0;display:flex;flex-direction:column;gap:12px">
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:12px;box-shadow:0 1px 2px rgba(11,43,38,.04)">
+        <button type="button" class="faq-q" onclick="dpFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:none;padding:18px 22px;font-family:inherit;font-size:16px;font-weight:600;color:#16232B;cursor:pointer;text-align:left">
+          <span>Где хранятся данные?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6B72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transition:transform .25s;transform:rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div class="faq-a" hidden><div style="padding:0 22px 18px;font-size:15px;line-height:1.6;color:#5B6B72">На компьютере клиники, в локальной базе. Ничего не уходит в облако; поставщик не имеет доступа к данным.</div></div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:12px;box-shadow:0 1px 2px rgba(11,43,38,.04)">
+        <button type="button" class="faq-q" onclick="dpFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:none;padding:18px 22px;font-family:inherit;font-size:16px;font-weight:600;color:#16232B;cursor:pointer;text-align:left">
+          <span>Что будет, если пропадёт интернет?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6B72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transition:transform .25s;transform:rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div class="faq-a" hidden><div style="padding:0 22px 18px;font-size:15px;line-height:1.6;color:#5B6B72">Ничего. Программа работает полностью офлайн; интернет нужен только для обновлений.</div></div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:12px;box-shadow:0 1px 2px rgba(11,43,38,.04)">
+        <button type="button" class="faq-q" onclick="dpFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:none;padding:18px 22px;font-family:inherit;font-size:16px;font-weight:600;color:#16232B;cursor:pointer;text-align:left">
+          <span>Можно работать с двух компьютеров?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6B72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transition:transform .25s;transform:rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div class="faq-a" hidden><div style="padding:0 22px 18px;font-size:15px;line-height:1.6;color:#5B6B72">Да — второй компьютер подключается по сети клиники, в тот же журнал.</div></div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:12px;box-shadow:0 1px 2px rgba(11,43,38,.04)">
+        <button type="button" class="faq-q" onclick="dpFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:none;padding:18px 22px;font-family:inherit;font-size:16px;font-weight:600;color:#16232B;cursor:pointer;text-align:left">
+          <span>Как приходят обновления?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6B72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transition:transform .25s;transform:rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div class="faq-a" hidden><div style="padding:0 22px 18px;font-size:15px;line-height:1.6;color:#5B6B72">Автоматически: программа сообщает о новой версии и обновляется в один клик, данные остаются нетронутыми.</div></div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:12px;box-shadow:0 1px 2px rgba(11,43,38,.04)">
+        <button type="button" class="faq-q" onclick="dpFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:none;padding:18px 22px;font-family:inherit;font-size:16px;font-weight:600;color:#16232B;cursor:pointer;text-align:left">
+          <span>Можно уйти в любой момент?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6B72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transition:transform .25s;transform:rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div class="faq-a" hidden><div style="padding:0 22px 18px;font-size:15px;line-height:1.6;color:#5B6B72">Да. Данные — ваши: экспорт в Excel и полный архив по пациенту, в любое время, бесплатно.</div></div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #E6EDEB;border-radius:12px;box-shadow:0 1px 2px rgba(11,43,38,.04)">
+        <button type="button" class="faq-q" onclick="dpFaq(this)" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;background:transparent;border:none;padding:18px 22px;font-family:inherit;font-size:16px;font-weight:600;color:#16232B;cursor:pointer;text-align:left">
+          <span>Сколько пользователей можно завести?</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5B6B72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none;transition:transform .25s;transform:rotate(0deg)"><path d="M6 9l6 6 6-6"></path></svg>
+        </button>
+        <div class="faq-a" hidden><div style="padding:0 22px 18px;font-size:15px;line-height:1.6;color:#5B6B72">Без ограничений: директор, регистратура и каждый врач со своим паролем — цена не меняется.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding:clamp(48px,6vw,76px) 0;scroll-margin-top:86px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px;text-align:center">
+    <h2 style="margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em;text-wrap:balance">Запишитесь на 15-минутную презентацию</h2>
+    <div style="max-width:520px;margin:36px auto 0;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:16px;padding:clamp(24px,4vw,32px);box-shadow:0 2px 6px rgba(11,43,38,.05),0 20px 50px -16px rgba(11,43,38,.12);text-align:left">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <input type="text" id="f-nume" placeholder="Имя" aria-label="Имя" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
+        <input type="text" id="f-clinica" placeholder="Клиника" aria-label="Клиника" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
+        <input type="tel" id="f-telefon" placeholder="Телефон" aria-label="Телефон" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
+        <button type="button" onclick="dpSend()" style="width:100%;background:#0E9F8A;color:#FFFFFF;border:1px solid #0E9F8A;border-radius:10px;padding:14px 26px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer" data-hover="background:#0B7F70;border-color:#0B7F70">Запросить презентацию</button>
+        <div id="dpsent" hidden>
+          <div style="background:#E9F6F3;color:#0B7F70;border-radius:10px;padding:13px 15px;font-size:14.5px;font-weight:600;text-align:center">Спасибо! Мы свяжемся с вами в ближайшее время.</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:28px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap">
+      <a href="tel:+37360508048" style="display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7F70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M5 4.5c0-.6.4-1 1-1h2.6c.4 0 .8.3.9.7l.9 3.1c.1.4 0 .8-.3 1L8.6 9.7a12.3 12.3 0 005.7 5.7l1.4-1.5c.2-.3.6-.4 1-.3l3.1.9c.4.1.7.5.7.9V18c0 .6-.5 1-1 1C11.9 19 5 12.1 5 4.5z"></path></svg>
+        +373 60 508 048</a>
+      <a href="mailto:dentpilotpro@gmail.com" style="display:inline-flex;align-items:center;gap:9px;font-size:15px;font-weight:500;color:#16232B;text-decoration:none" data-hover="color:#0B7F70">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0B7F70" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><rect x="3" y="5.5" width="18" height="13" rx="2"></rect><path d="M3.5 7.5l8.5 6 8.5-6"></path></svg>
+        dentpilotpro@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#F6F9F8;border-top:1px solid #E6EDEB;padding:48px 0 40px">
+  <div style="max-width:1140px;margin:0 auto;padding:0 24px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap">
+      <div>
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="width:28px;height:28px;flex:none;border-radius:8px;background:#0E9F8A;display:inline-flex;align-items:center;justify-content:center">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8.2 3.8C5.9 3.8 4 5.7 4 8.2c0 1.9.8 3.2 1.4 4.7.7 1.7 1 4.4 1.8 6.6.3.9 1.5.9 1.8 0 .6-1.9.8-4 1.6-5.2.6-.9 1.7-.9 2.3 0 .8 1.2 1 3.3 1.6 5.2.3.9 1.5.9 1.8 0 .8-2.2 1.1-4.9 1.8-6.6.6-1.5 1.4-2.8 1.4-4.7 0-2.5-1.9-4.4-4.2-4.4-1.1 0-1.9.5-3.1.5s-2-.5-3.2-.5z"></path></svg>
+          </span>
+          <span style="font-size:16px;font-weight:700;letter-spacing:-0.02em">DentPilot</span>
+        </div>
+        <p style="margin:12px 0 0;font-size:14px;color:#5B6B72">Программа разработана в Молдове</p>
+      </div>
+      <nav style="display:flex;gap:22px;flex-wrap:wrap">
+        <a href="#functii" style="font-size:14px;font-weight:500;color:#5B6B72;text-decoration:none" data-hover="color:#0B7F70">Функции</a>
+        <a href="#preturi" style="font-size:14px;font-weight:500;color:#5B6B72;text-decoration:none" data-hover="color:#0B7F70">Цены</a>
+        <a href="#legea-195" style="font-size:14px;font-weight:500;color:#5B6B72;text-decoration:none" data-hover="color:#0B7F70">Закон 195</a>
+        <a href="#faq" style="font-size:14px;font-weight:500;color:#5B6B72;text-decoration:none" data-hover="color:#0B7F70">FAQ</a>
+        <a href="privacy.html" style="font-size:14px;font-weight:500;color:#5B6B72;text-decoration:none" data-hover="color:#0B7F70">Politica de confidențialitate</a>
+        <a href="termeni.html" style="font-size:14px;font-weight:500;color:#5B6B72;text-decoration:none" data-hover="color:#0B7F70">Termeni și condiții</a>
+      </nav>
+    </div>
+    <div style="height:1px;background:#E6EDEB;margin:28px 0 20px"></div>
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <span style="font-size:13.5px;color:#7C8B91">Oleg Bacalu, antreprenor independent · IDNO 1026023148339</span>
+      <span style="font-size:13.5px;color:#7C8B91">© 2026 DentPilot</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function dpMenu(v){var m=document.getElementById('dpmenu');m.hidden=(v===0)?true:!m.hidden}
+function dpFaq(b){var card=b.parentElement;var open=card.classList.contains('faq-open');
+document.querySelectorAll('.faq-open').forEach(function(c){c.classList.remove('faq-open');
+var a=c.querySelector('.faq-a');if(a)a.hidden=true});
+if(!open){card.classList.add('faq-open');var a=card.querySelector('.faq-a');if(a)a.hidden=false}}
+function dpSend(){var n=document.getElementById('f-nume').value.trim(),
+c=document.getElementById('f-clinica').value.trim(),
+t=document.getElementById('f-telefon').value.trim();
+var subj='Solicitare prezentare DentPilot';
+var txt='Nume: '+n+'\nClinica: '+c+'\nTelefon: '+t;
+location.href='mailto:dentpilotpro@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(txt);
+document.getElementById('dpsent').hidden=false}
+</script>
+</body>
+</html>

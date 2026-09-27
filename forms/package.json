@@ -1,0 +1,10 @@
+{
+  "name": "dentpilot-forms",
+  "private": true,
+  "type": "module",
+  "description": "Приём заявок с dentpilot.md: Cloudflare Worker + Resend",
+  "scripts": {
+    "test": "node --test",
+    "dev": "node dev/serve.mjs"
+  }
+}

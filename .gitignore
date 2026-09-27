@@ -1,1 +1,5 @@
 README.md
+# стенд формы: письма сухого прогона и служебное wrangler
+forms/dev/outbox/
+forms/.wrangler/
+forms/node_modules/

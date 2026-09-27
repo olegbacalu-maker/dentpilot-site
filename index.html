@@ -99,6 +99,8 @@ body{background:#fff;color:var(--dp-ink)}
 #contact>div>div{border-color:#cfe3de!important;border-radius:20px!important;box-shadow:0 20px 50px -25px rgba(11,43,38,.22)!important}
 #contact input{border-radius:12px!important;border-color:#d3e1de!important;padding:14px 15px!important}
 #contact button{border-radius:12px!important;box-shadow:0 12px 25px -14px rgba(8,121,104,.7)}
+#dpform button:disabled{opacity:.72;cursor:progress}
+#dperr a{color:inherit;font-weight:600}
 footer{background:#f5faf8!important}
 @media(max-width:760px){.dp-trust{grid-template-columns:1fr 1fr!important;gap:20px!important}.dp-trust>div:nth-child(2){border-right:0}.dp-trust>div{padding:0 4px}.dp-hero h1{font-size:clamp(38px,11vw,54px)!important}.dp-product-shot{margin-top:44px!important;border-radius:14px!important}.dp-hero{padding-top:54px!important}}
 @media(max-width:520px){.dp-trust{grid-template-columns:1fr!important}.dp-trust>div{border-right:0!important;border-bottom:1px solid #e6efec;padding:10px 0 18px}.dp-trust>div:last-child{border-bottom:0}}
@@ -552,14 +554,24 @@ footer{background:#f5faf8!important}
   <div style="max-width:1140px;margin:0 auto;padding:0 24px;text-align:center">
     <h2 style="margin:0;font-size:clamp(26px,3.6vw,36px);font-weight:700;letter-spacing:-0.02em;text-wrap:balance">Programați o prezentare de 15 minute</h2>
     <div style="max-width:520px;margin:36px auto 0;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:16px;padding:clamp(24px,4vw,32px);box-shadow:0 2px 6px rgba(11,43,38,.05),0 20px 50px -16px rgba(11,43,38,.12);text-align:left">
-      <div style="display:flex;flex-direction:column;gap:12px">
-        <input type="text" id="f-nume" placeholder="Nume" aria-label="Nume" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
-        <input type="text" id="f-clinica" placeholder="Clinica" aria-label="Clinica" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
-        <input type="tel" id="f-telefon" placeholder="Telefon" aria-label="Telefon" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
-        <button type="button" onclick="dpSend()" style="width:100%;background:#0E9F8A;color:#FFFFFF;border:1px solid #0E9F8A;border-radius:10px;padding:14px 26px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer" data-hover="background:#0B7F70;border-color:#0B7F70">Solicită o prezentare</button>
-        <div id="dpsent" hidden>
-          <div style="background:#E9F6F3;color:#0B7F70;border-radius:10px;padding:13px 15px;font-size:14.5px;font-weight:600;text-align:center">Mulțumim! Vă contactăm în curând.</div>
-        </div>
+      <!-- Заявка уходит в forms.dentpilot.md (site\forms): письмо Олегу и
+           подтверждение клиенту. Без скрипта форма тоже работает — POST туда же. -->
+      <form id="dpform" method="post" action="https://forms.dentpilot.md/prezentare" novalidate onsubmit="return dpSend(event)" style="display:flex;flex-direction:column;gap:12px;margin:0">
+        <input type="text" id="f-nume" name="nume" autocomplete="name" maxlength="80" required placeholder="Nume" aria-label="Nume" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
+        <input type="text" id="f-clinica" name="clinica" autocomplete="organization" maxlength="120" required placeholder="Clinica" aria-label="Clinica" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
+        <input type="tel" id="f-telefon" name="telefon" autocomplete="tel" maxlength="40" required placeholder="Telefon" aria-label="Telefon" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
+        <input type="email" id="f-email" name="email" autocomplete="email" maxlength="254" required placeholder="E-mail" aria-label="E-mail" style="width:100%;box-sizing:border-box;border:1px solid #D8E2DF;border-radius:10px;padding:13px 15px;font-family:inherit;font-size:15.5px;color:#16232B;background:#FFFFFF" data-focus="border-color:#0E9F8A;outline:none">
+        <input type="hidden" name="lang" value="ro">
+        <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden"><label>Nu completați acest câmp <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <p id="dperr" role="alert" hidden style="margin:0;background:#FDF1EF;color:#9F3A2C;border-radius:10px;padding:12px 15px;font-size:14.5px;line-height:1.5"></p>
+        <button type="submit" id="dpbtn" style="width:100%;background:#0E9F8A;color:#FFFFFF;border:1px solid #0E9F8A;border-radius:10px;padding:14px 26px;font-family:inherit;font-size:16px;font-weight:600;cursor:pointer" data-hover="background:#0B7F70;border-color:#0B7F70">Solicită o prezentare</button>
+        <p style="margin:2px 0 0;font-size:13px;line-height:1.5;color:#7C8B91;text-align:center">Folosim datele doar ca să vă contactăm despre prezentare. <a href="privacy.html#formular" style="color:#5B6B72">Politica de confidențialitate</a></p>
+      </form>
+      <div id="dpsent" hidden role="status" style="text-align:center;padding:6px 0">
+        <span style="width:48px;height:48px;border-radius:14px;background:#E9F6F3;display:inline-flex;align-items:center;justify-content:center"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0B7F70" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"></path></svg></span>
+        <h3 id="dpsent-t" style="margin:16px 0 8px;font-size:20px;font-weight:700;letter-spacing:-0.01em"></h3>
+        <p id="dpsent-p" style="margin:0;font-size:15.5px;line-height:1.6;color:#5B6B72"></p>
+        <p id="dpsent-m" style="margin:10px 0 0;font-size:14.5px;line-height:1.55;color:#7C8B91"></p>
       </div>
     </div>
     <div style="margin-top:28px;display:flex;justify-content:center;gap:28px;flex-wrap:wrap">
@@ -609,13 +621,45 @@ function dpFaq(b){var card=b.parentElement;var open=card.classList.contains('faq
 document.querySelectorAll('.faq-open').forEach(function(c){c.classList.remove('faq-open');
 var a=c.querySelector('.faq-a');if(a)a.hidden=true});
 if(!open){card.classList.add('faq-open');var a=card.querySelector('.faq-a');if(a)a.hidden=false}}
-function dpSend(){var n=document.getElementById('f-nume').value.trim(),
-c=document.getElementById('f-clinica').value.trim(),
-t=document.getElementById('f-telefon').value.trim();
-var subj='Solicitare prezentare DentPilot';
-var txt='Nume: '+n+'\nClinica: '+c+'\nTelefon: '+t;
-location.href='mailto:dentpilotpro@gmail.com?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent(txt);
-document.getElementById('dpsent').hidden=false}
+/* Заявка — в forms.dentpilot.md (site\forms). «Mulțumim» только после ответа
+   сервера: не ушло — посетитель видит телефон, а не благодарность. Тексты
+   обещаний совпадают с письмом (forms\src\letters.js) — править вместе. */
+var DP_URL='https://forms.dentpilot.md/prezentare';
+var DP_T={sending:'Se trimite…',
+nume:'Scrieți numele dvs.',
+clinica:'Scrieți denumirea clinicii.',
+telefon:'Scrieți un număr de telefon, de exemplu 069 123 456.',
+email:'Scrieți o adresă de e-mail corectă, de exemplu nume@clinica.md.',
+limited:'Prea multe cereri de la această adresă. Încercați peste un minut sau sunați-ne: <a href="tel:+37360508048">+373 60 508 048</a>.',
+failed:'Cererea nu a putut fi trimisă. Sunați-ne: <a href="tel:+37360508048">+373 60 508 048</a> sau scrieți la <a href="mailto:contact@dentpilot.md">contact@dentpilot.md</a>.',
+thanks:'Mulțumim, {n}!',
+called:'Am primit cererea. Vă sunăm în cel mult o zi lucrătoare la {t}, ca să stabilim ora prezentării.',
+mailed:'Confirmarea am trimis-o pe {e}.',
+unmailed:'Confirmarea pe {e} nu a plecat — verificați adresa; vă sunăm oricum.'};
+function dpSend(ev){ev.preventDefault();
+var f=document.getElementById('dpform'),b=document.getElementById('dpbtn');
+var v=function(id){return document.getElementById(id).value.replace(/\s+/g,' ').trim()};
+var n=v('f-nume'),c=v('f-clinica'),t=v('f-telefon'),e=v('f-email'),d=t.replace(/\D/g,'').length;
+var bad=n.length<2?'nume':c.length<2?'clinica':(!/^[\d\s+()./-]+$/.test(t)||d<8||d>15)?'telefon':
+!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)?'email':'';
+if(bad){dpErr(DP_T[bad]);document.getElementById('f-'+bad).focus();return false}
+document.getElementById('dperr').hidden=true;
+var label=b.textContent;b.disabled=true;b.textContent=DP_T.sending;
+var back=function(){b.disabled=false;b.textContent=label};
+fetch(DP_URL,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}})
+.then(function(r){return r.json().catch(function(){return{ok:false,code:'send_failed'}})})
+.then(function(j){if(j.ok){dpDone(n,t,e,j.confirmed);return}
+back();if(j.code==='invalid'&&DP_T[j.field]){dpErr(DP_T[j.field]);document.getElementById('f-'+j.field).focus()}
+else dpErr(j.code==='limited'?DP_T.limited:DP_T.failed)})
+.catch(function(){back();dpErr(DP_T.failed)});
+return false}
+function dpErr(h){var p=document.getElementById('dperr');p.innerHTML=h;p.hidden=false}
+function dpSay(id,s,k,v){document.getElementById(id).textContent=s.replace(k,function(){return v})}
+function dpDone(n,t,e,ok){document.getElementById('dpform').style.display='none';
+dpSay('dpsent-t',DP_T.thanks,'{n}',n);dpSay('dpsent-p',DP_T.called,'{t}',t);
+dpSay('dpsent-m',ok?DP_T.mailed:DP_T.unmailed,'{e}',e);
+var s=document.getElementById('dpsent');s.hidden=false;s.scrollIntoView({block:'nearest'});
+if(typeof gtag==='function')gtag('event','generate_lead',{form:'prezentare'})}
 </script>
 </body>
 </html>

@@ -1,0 +1,30 @@
+# Приём заявок с dentpilot.md (форма «Solicită o prezentare»), 27.09.2026.
+# Выкладка: npx wrangler deploy (из этой папки). Секрет — один:
+#   npx wrangler secret put RESEND_API_KEY
+# Адрес forms.dentpilot.md Cloudflare заводит сам (custom_domain): запись
+# проксированная, но только у этого поддомена — dentpilot.md и www остаются
+# DNS only, как требует GitHub Pages.
+name = "dentpilot-forms"
+main = "src/worker.js"
+compatibility_date = "2026-09-01"
+workers_dev = false
+routes = [{ pattern = "forms.dentpilot.md", custom_domain = true }]
+
+[vars]
+MAIL_FROM = "DentPilot <contact@dentpilot.md>"
+REPLY_TO = "contact@dentpilot.md"
+NOTIFY_TO = "dentpilotpro@gmail.com"
+ALLOWED_ORIGINS = "https://dentpilot.md,https://www.dentpilot.md"
+
+# 5 заявок в минуту с одного адреса: человеку хватает с запасом, а перебор
+# ботом упирается раньше суточного лимита Resend (100 писем)
+[[ratelimits]]
+name = "LIMITER"
+namespace_id = "2709"
+
+  [ratelimits.simple]
+  limit = 5
+  period = 60
+
+[observability]
+enabled = true

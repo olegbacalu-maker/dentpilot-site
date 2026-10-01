@@ -225,8 +225,25 @@ footer{background:#f5faf8!important}
         <img width="2048" height="1269" src="shots/02_odontograma.png" alt="Карточка пациента с одонтограммой FDI" loading="lazy" style="display:block;width:100%;height:auto">
       </div>
     </div>
+    <!-- 3D-одонтограмма (B7, у клиник с 1.35.0): кадр 05 снят с живого демо —
+         site/README.md › «Пересъёмка 01.10» (DP_ONLY=odontograma3d, SwiftShader). -->
     <div class="zz zz-rev" style="display:grid;grid-template-columns:6fr 5fr;gap:64px;align-items:center">
       <div class="zz-text" style="order:2">
+        <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B7F70">3D-одонтограмма</div>
+        <h2 style="margin:12px 0 0;font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">Та же одонтограмма — в объёме</h2>
+        <p style="margin:18px 0 0;font-size:16.5px;line-height:1.65;color:#5B6B72;text-wrap:pretty">3D-вид показывает зубы так, как их видит врач: вращение, фронтальный или окклюзионный вид, корни по запросу. Состояния видны на поверхностях, зуб выбирается кликом или пальцем на планшете, а инспектор справа тот же — отмеченное в 3D попадает в формулу FDI, в план и в форму 043/e.</p>
+      </div>
+      <div class="zz-img" style="border-radius:14px;border:1px solid #E6EDEB;background:#FFFFFF;box-shadow:0 2px 6px rgba(11,43,38,.05),0 24px 60px -16px rgba(11,43,38,.2);overflow:hidden">
+        <div style="display:flex;align-items:center;height:36px;padding:0 14px;background:#F6F9F8;border-bottom:1px solid #E6EDEB">
+          <span style="display:flex;gap:6px"><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span><span style="width:9px;height:9px;border-radius:50%;background:#DDE6E3"></span></span>
+          <span style="margin:0 auto;background:#FFFFFF;border:1px solid #E6EDEB;border-radius:6px;padding:2px 12px;font-size:11.5px;color:#5B6B72">3D-одонтограмма</span>
+          <span style="width:39px;flex:none"></span>
+        </div>
+        <img width="2048" height="1175" src="shots/05_odontograma3d.png" alt="3D-одонтограмма с выбранным зубом и инспектором поверхностей" loading="lazy" style="display:block;width:100%;height:auto">
+      </div>
+    </div>
+    <div class="zz" style="display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center">
+      <div class="zz-text">
         <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B7F70">Медицинские документы</div>
         <h2 style="margin:12px 0 0;font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">Форма 043/e — заполняется автоматически</h2>
         <p style="margin:18px 0 0;font-size:16.5px;line-height:1.65;color:#5B6B72;text-wrap:pretty">Программа заполняет медицинскую карту 043/e (приказ МЗ 828/2011) из уже введённых данных: диагноз, зубная формула, журнал визитов. Отсюда же печатаются информированное согласие на план лечения (ст. 13, Закон 263/2005) и информирование пациента об обработке данных — документы, готовые к подписи, без ручного переписывания.</p>
@@ -240,8 +257,8 @@ footer{background:#f5faf8!important}
         <img width="1552" height="1512" src="shots/03_fisa043.png" alt="Медицинская форма 043/e, заполненная автоматически" loading="lazy" style="display:block;width:100%;height:auto">
       </div>
     </div>
-    <div class="zz" style="display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center">
-      <div class="zz-text">
+    <div class="zz zz-rev" style="display:grid;grid-template-columns:6fr 5fr;gap:64px;align-items:center">
+      <div class="zz-text" style="order:2">
         <div style="font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#0B7F70">Статистика для директора</div>
         <h2 style="margin:12px 0 0;font-size:clamp(26px,3.4vw,34px);font-weight:700;letter-spacing:-0.02em;line-height:1.15;text-wrap:balance">Цифры клиники — всегда свежие</h2>
         <p style="margin:18px 0 0;font-size:16.5px;line-height:1.65;color:#5B6B72;text-wrap:pretty">Четыре показателя со сравнением с прошлым периодом — поступления, записи, посещаемость и загрузка — плюс реальные деньги по способам оплаты, оценка по прайсу и потери от неявок. Показатели каждого врача, самые востребованные услуги. Экспорт в Excel в один клик.</p>

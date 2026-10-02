@@ -61,7 +61,10 @@
       // equal size on purpose: saying no must be as easy as saying yes
       '.dp-cc button{flex:1;font:inherit;font-size:15px;font-weight:600;padding:11px 16px;border-radius:10px;cursor:pointer;border:1px solid #0E9F8A}' +
       '.dp-cc button[data-v=denied]{background:#FFFFFF;color:#0B7F70}' +
-      '.dp-cc button[data-v=granted]{background:#0E9F8A;color:#FFFFFF}';
+      '.dp-cc button[data-v=granted]{background:#0E9F8A;color:#FFFFFF}' +
+      // never on paper: the declaration is printed to PDF from this very page,
+      // and a banner that is still open would land on top of the signature
+      '@media print{.dp-cc{display:none}}';
     document.head.appendChild(css);
     box = document.createElement('div');
     box.className = 'dp-cc';

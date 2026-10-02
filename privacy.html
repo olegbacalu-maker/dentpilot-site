@@ -42,7 +42,8 @@ footer{border-top:1px solid #E6EDEB;padding:20px 24px;text-align:center;font-siz
   <p>Site-ul dentpilot.md este gestionat de Oleg Bacalu, antreprenor
   independent (Legea nr. 228/2025), IDNO 1026023148339, e-mail:
   <a href="mailto:contact@dentpilot.md">contact@dentpilot.md</a>.
-  Această politică descrie ce date sunt prelucrate prin acest site.</p>
+  Această politică descrie ce date sunt prelucrate prin acest site și prin
+  serverul de licențe cloud.dentpilot.md.</p>
 
   <h2 id="cookie">2. Ce date colectează site-ul</h2>
   <ul>
@@ -64,21 +65,12 @@ footer{border-top:1px solid #E6EDEB;padding:20px 24px;text-align:center;font-siz
     O puteți schimba oricând din linkul „Setări cookie” din subsolul
     paginii principale; retragerea acordului șterge cookie-urile
     Google Analytics.</li>
-    <li id="formular"><b>Formularul „Solicită o prezentare”.</b> Datele
-    introduse — numele, clinica, telefonul și e-mailul — le folosim doar ca
-    să vă contactăm despre prezentare: vă sunăm pentru a stabili ora și vă
-    trimitem pe e-mail confirmarea cererii. Temeiul prelucrării este cererea
-    dvs. Formularul este procesat de Cloudflare, Inc. (serviciul Cloudflare
-    Workers), e-mailurile le trimite Resend, Inc., iar cererea ajunge în
-    căsuța noastră de e-mail Gmail (Google). Acești furnizori prelucrează
-    datele doar pentru a presta serviciul și pot folosi servere din afara
-    Republicii Moldova, inclusiv din SUA. Resend păstrează copia
-    e-mailurilor trimise cel mult 30 de zile. Adresa IP servește doar la
-    limitarea abuzurilor (câteva cereri pe minut) și nu se salvează
-    împreună cu cererea.</li>
-    <li>Datele din formular nu le folosim pentru marketing automat și nu le
-    transmitem altor terți. Dacă nu ajungem să colaborăm, ștergem cererea
-    în cel mult 12 luni.</li>
+    <li>Formularul „Solicită o prezentare" deschide aplicația dvs. de
+    e-mail; datele introduse (nume, clinică, telefon) ajung la noi doar
+    dacă trimiteți mesajul.</li>
+    <li>Datele primite prin e-mail sunt folosite exclusiv pentru a vă
+    răspunde și a programa prezentarea. Nu le transmitem terților și nu le
+    folosim pentru marketing automat.</li>
   </ul>
   <p><a href="#" data-dp-consent hidden>Setări cookie — schimbați alegerea</a></p>
 
@@ -93,7 +85,73 @@ footer{border-top:1px solid #E6EDEB;padding:20px 24px;text-align:center;font-siz
   pacienți este clinica. Prin acest site nu se prelucrează date ale
   pacienților.</p>
 
-  <h2 id="demo">5. Versiunea demonstrativă online (demo.dentpilot.md)</h2>
+  <h2>5. Datele contului clinicii</h2>
+  <p>Dacă o clinică solicită perioada de probă din program (pagina de
+  activare), prin
+  <a href="https://cloud.dentpilot.md/proba">formularul de pe cloud.dentpilot.md</a>
+  sau din <a href="https://cloud.dentpilot.md/cont">contul clinicii</a>,
+  sau activează programul (perioada de probă sau abonamentul), furnizorul
+  prelucrează, în calitate de operator, <b>datele contului clinicii</b>:
+  denumirea, IDNO, persoana de contact, e-mailul, telefonul, adresa,
+  fișierele de licență emise, notele de plată, plățile confirmate și
+  jurnalul e-mailurilor trimise clinicii (nota de plată, notificările de
+  expirare, fișierul de licență, codul de activare).</p>
+  <ul>
+    <li><b>Scopul și temeiul:</b> emiterea și reînnoirea licenței, facturarea
+    și notificările privind expirarea — executarea contractului cu clinica
+    (<a href="termeni.html">Termeni și condiții</a>).</li>
+    <li><b>Unde:</b> pe serverul de licențe cloud.dentpilot.md, administrat de
+    furnizor și găzduit de Contabo GmbH (Germania) într-un centru de date din
+    Uniunea Europeană. Serverul nu pune cookie-uri vizitatorilor site-ului și
+    formularului de probă; singurele cookie-uri sunt cele ale contului
+    clinicii, descrise mai jos.</li>
+    <li><b>Cât timp:</b> pe durata contractului; documentele de plată — pe
+    termenul cerut de legislația contabilă. La cererea clinicii, după încetarea
+    contractului, celelalte date ale contului sunt șterse.</li>
+    <li><b>Ce nu conține:</b> date ale pacienților. Programul nu transmite
+    serverului nicio informație despre pacienți, programări sau tratamente;
+    fișierul de licență conține doar denumirea clinicii, IDNO, tipul și
+    termenul abonamentului.</li>
+    <li><b>Verificarea zilnică:</b> programul activat, dacă are acces la
+    internet, întreabă serverul o dată pe zi dacă există un fișier de licență
+    mai nou. Cererea conține doar cheia fișierului de licență și numărul lui de
+    ordine; serverul reține data ultimei verificări. După o cerere de probă
+    trimisă din program, până la aprobarea ei, programul întreabă serverul o
+    dată pe minut, cu cheia primită la trimiterea cererii.</li>
+    <li><b>Codul de activare:</b> dacă programul se activează pe încă un
+    calculator al unei clinici deja înregistrate, sau dacă un cont Google cere
+    conectarea la o clinică deja înregistrată (după IDNO), serverul trimite un
+    cod pe e-mailul clinicii (cel înregistrat, nu cel introdus în cerere). Codul este
+    valabil 15 minute și se folosește o singură dată; serverul nu păstrează
+    codul, ci doar amprenta lui.</li>
+    <li><b>Contul clinicii</b>
+    (<a href="https://cloud.dentpilot.md/cont">cloud.dentpilot.md/cont</a>):
+    intrarea se face cu un cont Google (autentificare OpenID Connect). După
+    ce alegeți contul, primim de la Google identificatorul contului, adresa
+    de e-mail confirmată de Google și numele; le păstrăm pentru a lega
+    intrarea de datele clinicii. Parola nu ajunge la noi. Contul folosește
+    două cookie-uri strict necesare, fără urmărire: <code>dp_oauth</code>, pe
+    durata autentificării (10 minute), și <code>dp_cont</code>, sesiunea
+    contului (7 zile sau până la ieșire). Google prelucrează autentificarea
+    conform <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">politicii sale de confidențialitate</a>.
+    În cont vedeți și descărcați fișierul de licență și programul, comandați
+    nota de plată și vă actualizați datele clinicii. Descărcarea programului
+    (cloud.dentpilot.md/descarca) este o trimitere la GitHub, unde sunt
+    publicate versiunile programului; serverul notează doar că s-a
+    descărcat.</li>
+    <li><b>Adresa IP:</b> serverul vede adresa IP de la care vine fiecare
+    cerere. La trimiterea cererii de probă (din program, prin formular sau din
+    cont), la activarea cu cod, la intrarea în cont și la descărcarea
+    programului ea se păstrează împreună cu cererea, pentru a limita
+    abuzurile; în rest apare doar în jurnalele tehnice ale serverului, care se
+    șterg automat.</li>
+    <li><b>Cine le vede:</b> doar furnizorul. Datele nu se transmit terților,
+    cu excepția furnizorului de găzduire a serverului (Contabo GmbH) și a
+    furnizorului de e-mail prin care se trimit notificările (Google, serviciul
+    Gmail), care le prelucrează doar pentru a presta aceste servicii.</li>
+  </ul>
+
+  <h2 id="demo">6. Versiunea demonstrativă online (demo.dentpilot.md)</h2>
   <p>Butonul „Încearcă demo online” deschide o copie a programului cu o
   clinică fictivă, pe un server închiriat de noi (Contabo GmbH), accesibil
   prin rețeaua Cloudflare, Inc. Copia este individuală și se identifică
@@ -106,14 +164,14 @@ footer{border-top:1px solid #E6EDEB;padding:20px 24px;text-align:center;font-siz
   demo; Cloudflare poate înregistra jurnale tehnice conform
   <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">politicii sale de confidențialitate</a>.</p>
 
-  <h2>6. Drepturile dvs.</h2>
+  <h2>7. Drepturile dvs.</h2>
   <p>Conform Legii nr. 195/2024 privind protecția datelor cu caracter
   personal, aveți dreptul de acces, rectificare, ștergere și opoziție.
   Scrieți-ne la adresa de e-mail
   de mai sus. Aveți, de asemenea, dreptul să depuneți o plângere la
   CNPDCP (<a href="https://datepersonale.md" target="_blank" rel="noopener">datepersonale.md</a>).</p>
 
-  <h2>7. Modificări</h2>
+  <h2>8. Modificări</h2>
   <p>Versiunea actualizată a politicii se publică pe această pagină.</p>
 </div>
 <footer>© 2026 DentPilot · <a href="termeni.html">Termeni și condiții</a></footer>

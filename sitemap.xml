@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/ru.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/"/>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -14,17 +14,38 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/ru.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/"/>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://dentpilot.md/privacy.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dentpilot.md/termeni.html</loc>
-    <lastmod>2026-09-24</lastmod>
+    <lastmod>2026-09-26</lastmod>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dentpilot.md/declaratie-195.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://dentpilot.md/descarca.html</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/descarca.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/descarca-ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/descarca.html"/>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dentpilot.md/descarca-ru.html</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/descarca.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/descarca-ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/descarca.html"/>
+    <lastmod>2026-10-01</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

@@ -95,12 +95,12 @@ header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdro
 .frame-bar i{width:10px;height:10px;border-radius:50%;background:#d5dce1}
 .frame-bar span{margin:0 auto;font-size:12px;color:var(--text-3)}
 .frame img{display:block;width:100%;height:auto}
-.shots{margin-top:48px;display:flex;flex-direction:column;gap:20px;align-items:center}
+.shots{margin-top:48px;display:flex;flex-direction:column;gap:20px;align-items:center;max-width:1448px}
 .tabs{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
 .tabs button{min-height:44px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.08);font-size:15px;font-weight:600;color:#fff}
 .tabs button:hover{background:rgba(255,255,255,.16)}
 .tabs button[aria-selected="true"]{background:#fff;border-color:#fff;color:var(--accent-d)}
-.shots .frame{margin:0;width:100%;max-width:1100px;border-color:rgba(255,255,255,.25);box-shadow:0 30px 80px rgba(3,30,26,.45)}
+.shots .frame{margin:0;width:100%;max-width:1400px;border-color:rgba(255,255,255,.25);box-shadow:0 30px 80px rgba(3,30,26,.45)}
 .shots .cap{margin:0;font-size:15px;color:var(--on-band);text-align:center;max-width:640px}
 .feats{padding:88px 0;overflow-x:clip}
 .feats .wrap{display:flex;flex-direction:column;gap:96px}
@@ -244,7 +244,7 @@ footer nav a:hover{color:var(--accent)}
     <div class="tabs" role="tablist" aria-label="Ecrane DentPilot"><button type="button" role="tab" id="tab-calendar" aria-selected="true" aria-controls="shot-panel" tabindex="0" data-src="shots/app-calendar.webp" data-alt="Calendarul zilei cu toți medicii în DentPilot" data-cap="Toți medicii pe un ecran: intervale libere, statusuri, programare nouă dintr-un click.">Calendarul zilei</button><button type="button" role="tab" id="tab-odontograma" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-odontograma.webp" data-alt="Odontograma 3D în DentPilot: implant pe 21, coroane, rădăcini vizibile" data-cap="Stările pe dinți și suprafețe — în 3D și în formula FDI, sincronizate.">Odontogramă 3D</button><button type="button" role="tab" id="tab-fisa" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-fisa.webp" data-alt="Fișa pacientului în DentPilot: date, atenționări medicale, istoric" data-cap="Istoric, atenționări medicale, documente și plan de tratament într-un loc.">Fișa pacientului</button><button type="button" role="tab" id="tab-statistici" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-statistici.webp" data-alt="Statisticile clinicii în DentPilot: încasări, programări, prezență, ocupare" data-cap="Încasări, programări, prezență și ocupare — comparate cu săptămâna trecută.">Statistici</button></div>
     <figure class="frame" role="tabpanel" id="shot-panel" aria-labelledby="tab-calendar">
       <div class="frame-bar" aria-hidden="true"><i></i><i></i><i></i><span id="shot-bar">DentPilot · Calendarul zilei</span></div>
-      <img id="shot" src="shots/app-calendar.webp" alt="Calendarul zilei cu toți medicii în DentPilot" width="2400" height="1500" fetchpriority="high">
+      <img id="shot" src="shots/app-calendar.webp" alt="Calendarul zilei cu toți medicii în DentPilot" width="2800" height="1750" fetchpriority="high">
     </figure>
     <p class="cap" id="shot-cap">Toți medicii pe un ecran: intervale libere, statusuri, programare nouă dintr-un click.</p>
   </div>
@@ -258,7 +258,7 @@ footer nav a:hover{color:var(--accent)}
     </div>
     <div class="feat rev">
       <div class="txt"><div class="eyebrow">Odontogramă 3D</div><h2 class="h2">Dinții așa cum îi vede medicul</h2><p class="lead">Aceeași odontogramă, în volum — dintele se alege cu un click sau cu degetul pe tabletă.</p><ul class="ul"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Vedere frontală, laterală sau ocluzală, rotire și rădăcini la cerere</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Implanturile și coroanele se văd ca atare, stările — pe suprafețe</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Ce notați în 3D apare în formula FDI, în plan și în fișa 043/e</li></ul></div>
-      <div class="img"><figure class="frame" style="margin:0"><img src="shots/app-odontograma.webp" alt="Odontograma 3D în DentPilot, dintele 21 selectat: implant, coroane pe 11 și 12" width="2400" height="1500" loading="lazy"></figure></div>
+      <div class="img"><figure class="frame" style="margin:0"><img src="shots/app-odontograma.webp" alt="Odontograma 3D în DentPilot, dintele 21 selectat: implant, coroane pe 11 și 12" width="2800" height="1750" loading="lazy"></figure></div>
     </div>
     <div class="feat">
       <div class="txt"><div class="eyebrow">Documente medicale</div><h2 class="h2">Fișa 043/e se completează singură</h2><p class="lead">Din datele deja introduse — fără copiat manual (Ordinul MS 828/2011).</p><ul class="ul"><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Diagnostic, formula dentară și jurnalul vizitelor</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Acordul informat pentru planul de tratament</li><li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Informarea pacientului privind prelucrarea datelor — gata de semnat</li></ul></div>

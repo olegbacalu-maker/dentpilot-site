@@ -12,6 +12,8 @@ const SITE = 'https://dentpilot.md';
 const LOGO = `${SITE}/mail/logo.png`;
 const LEGAL = 'Oleg Bacalu, antreprenor independent · IDNO 1026023148339';
 const FONT = "'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
+// «Cum vă contactăm?» на сайте (08.10): ключ формы → имя канала в письмах
+export const VIA = { telefon: 'Telefon', whatsapp: 'WhatsApp', viber: 'Viber' };
 
 const T = {
   ro: {
@@ -20,8 +22,10 @@ const T = {
     hello: (n) => `Bună ziua, ${n},`,
     intro: (c) => `Vă mulțumim pentru interesul față de DentPilot. Am primit cererea de prezentare pentru „${c}”.`,
     next: 'Ce urmează',
-    steps: (p) => [
-      `Vă sunăm în cel mult o zi lucrătoare la ${p}, ca să stabilim ora potrivită.`,
+    steps: (p, via) => [
+      via === 'telefon'
+        ? `Vă sunăm în cel mult o zi lucrătoare la ${p}, ca să stabilim ora potrivită.`
+        : `Vă scriem pe ${VIA[via]} la ${p} în cel mult o zi lucrătoare, ca să stabilim ora potrivită.`,
       'Prezentarea durează circa 15 minute: vedeți programul pe ecranul dvs. — programările, fișa pacientului '
         + 'cu odontograma, fișa 043/e și statisticile.',
       'Răspundem la întrebările despre instalare, preț și Legea 195/2024. Prezentarea este gratuită și nu vă '
@@ -48,8 +52,10 @@ const T = {
     hello: (n) => `Здравствуйте, ${n}!`,
     intro: (c) => `Спасибо за интерес к DentPilot. Мы получили заявку на презентацию для «${c}».`,
     next: 'Что дальше',
-    steps: (p) => [
-      `В течение рабочего дня позвоним по номеру ${p}, чтобы договориться об удобном времени.`,
+    steps: (p, via) => [
+      via === 'telefon'
+        ? `В течение рабочего дня позвоним по номеру ${p}, чтобы договориться об удобном времени.`
+        : `В течение рабочего дня напишем вам в ${VIA[via]} на номер ${p}, чтобы договориться об удобном времени.`,
       'Презентация занимает около 15 минут: вы видите программу на своём экране — расписание, карту пациента '
         + 'с одонтограммой, форму 043/e и статистику.',
       'Ответим на вопросы об установке, цене и Законе 195/2024. Презентация бесплатная и ни к чему не обязывает.',
@@ -78,7 +84,7 @@ export function esc(s) {
 /** Подтверждение клиенту: письмо на адрес из формы, языком страницы. */
 export function autoReply(f, lang) {
   const t = T[lang] || T.ro;
-  const steps = t.steps(f.telefon);
+  const steps = t.steps(f.telefon, f.via || 'telefon');
   const values = [f.nume, f.clinica, f.telefon, f.email];
   const text = [
     t.hello(f.nume),
@@ -190,20 +196,23 @@ export function notice(f, lang, { country = '', replyFailed = '' } = {}) {
     `  Имя:      ${f.nume}`,
     `  Клиника:  ${f.clinica}`,
     `  Телефон:  ${f.telefon}`,
-    `  E-mail:   ${f.email}`,
+    `  Связь:    ${VIA[f.via] || 'Telefon'}`,
+    `  E-mail:   ${f.email || '— (не указан)'}`,
     '',
     lang === 'ru' ? 'Страница: русская — отвечать по-русски.' : 'Страница: румынская — отвечать по-румынски.',
-    replyFailed
-      ? `ВНИМАНИЕ: подтверждение клиенту НЕ ушло (${replyFailed}). Проверь адрес и ответь клиенту сам.`
-      : 'Подтверждение клиенту ушло вместе с этим письмом.',
-    '«Ответить» на это письмо — ответ уйдёт клиенту.',
+    !f.email
+      ? 'E-mail клиент не оставил: подтверждения нет, связь — по телефону/мессенджеру выше.'
+      : replyFailed
+        ? `ВНИМАНИЕ: подтверждение клиенту НЕ ушло (${replyFailed}). Проверь адрес и ответь клиенту сам.`
+        : 'Подтверждение клиенту ушло вместе с этим письмом.',
   ];
+  if (f.email) lines.push('«Ответить» на это письмо — ответ уйдёт клиенту.');
   if (country) lines.push(`Страна по IP: ${country}`);
   return {
     kind: 'notice',
     subject: `Заявка на презентацию: ${f.clinica} (${f.nume})`,
     text: lines.join('\n'),
-    replyTo: f.email,
+    replyTo: f.email || undefined,
   };
 }
 

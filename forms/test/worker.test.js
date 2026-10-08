@@ -227,3 +227,42 @@ test('в журнал Workers не попадают имя, телефон и а
     }
   }
 });
+
+test('канал связи (08.10): WhatsApp/Viber попадает в заявку и в шаг письма; неизвестный — телефон', async () => {
+  await worker.fetch(post({ ...GOOD, via: 'whatsapp' }), ENV);
+  const [toOleg, toClient] = calls[0].body;
+  assert.match(toOleg.text, /Связь: {4}WhatsApp/);
+  assert.match(toClient.text, /Vă scriem pe WhatsApp la \+373 69 123 456/);
+  assert.match(toClient.html, /Vă scriem pe WhatsApp/);
+  await worker.fetch(post({ ...GOOD, via: 'fax', lang: 'ru' }), ENV);
+  const [o2, c2] = calls[1].body;
+  assert.match(o2.text, /Связь: {4}Telefon/);
+  assert.match(c2.text, /позвоним по номеру/);
+  const { f } = clean(new URLSearchParams({ ...GOOD, via: 'Viber' }));
+  assert.equal(f.via, 'viber');
+});
+
+test('e-mail необязателен (08.10): без адреса — одно письмо Олегу, confirmed:false, без Reply-To', async () => {
+  const r = await worker.fetch(post({ ...GOOD, email: '', via: 'viber' }), ENV);
+  assert.equal(r.status, 200);
+  assert.deepEqual(await r.json(), { ok: true, confirmed: false });
+  assert.equal(calls.length, 1);
+  assert.equal(calls[0].url, 'https://api.resend.com/emails');
+  const m = calls[0].body;
+  assert.deepEqual(m.to, ['dentpilotpro@gmail.com']);
+  assert.equal(m.reply_to, undefined);
+  assert.match(m.text, /E-mail: {3}— \(не указан\)/);
+  assert.match(m.text, /E-mail клиент не оставил/);
+  assert.doesNotMatch(m.text, /«Ответить»/);
+  // поле вовсе отсутствует (старая форма) — то же
+  const { field } = clean(new URLSearchParams({ nume: GOOD.nume, clinica: GOOD.clinica, telefon: GOOD.telefon }));
+  assert.equal(field, '');
+});
+
+test('без адреса и Resend отказал — 502, не «Mulțumim!»', async () => {
+  replies = [{ status: 500, body: {} }];
+  const r = await worker.fetch(post({ ...GOOD, email: '' }), ENV);
+  assert.equal(r.status, 502);
+  assert.deepEqual(await r.json(), { ok: false, code: 'send_failed' });
+  assert.equal(calls.length, 1);
+});

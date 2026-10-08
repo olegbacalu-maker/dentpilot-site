@@ -22,6 +22,8 @@ const LANGS = ['ro', 'ru'];
 // имя уходит в письмо на адрес, который ввёл посетитель, а не мы.
 const URLISH = /https?:|www\.|:\/\/|[<>]/i;
 const EMAIL = /^[^\s@<>()",;:]+@[^\s@<>()",;:]+\.[^\s@<>()",;:]{2,}$/;
+// Как связаться (08.10, редизайн сайта): телефон по умолчанию — поле старых форм без него
+const VIAS = ['telefon', 'whatsapp', 'viber'];
 
 export default {
   async fetch(request, env) {
@@ -76,6 +78,13 @@ export default {
     if (field) return answer(400, { ok: false, code: 'invalid', field });
 
     const toOleg = (meta) => mail(env, { ...notice(f, lang, meta), to: env.NOTIFY_TO });
+    if (!f.email) {
+      // E-mail необязателен (08.10): без адреса подтверждать некому — только заявка Олегу
+      const only = await send(env, '/emails', toOleg({ country }));
+      log({ ev: 'lead', lang, country, confirmed: false, noEmail: true, notice: only.ok ? 'ok' : only.error });
+      if (only.ok) return answer(200, { ok: true, confirmed: false });
+      return answer(502, { ok: false, code: 'send_failed' });
+    }
     const both = await send(env, '/emails/batch', [
       toOleg({ country }),
       mail(env, { ...autoReply(f, lang), replyTo: env.REPLY_TO }),
@@ -100,14 +109,16 @@ export function clean(form) {
     clinica: one('clinica', 120),
     telefon: one('telefon', 40),
     email: one('email', 254),
+    via: String(form.get('via') || '').trim().toLowerCase(),
   };
+  if (!VIAS.includes(f.via)) f.via = 'telefon';
   if (f.nume.length < 2 || f.nume.length > 80 || URLISH.test(f.nume) || f.nume.includes('@')) {
     return { f, field: 'nume' };
   }
   if (f.clinica.length < 2 || f.clinica.length > 120 || URLISH.test(f.clinica)) return { f, field: 'clinica' };
   const digits = f.telefon.replace(/\D/g, '').length;
   if (digits < 8 || digits > 15 || /[^\d\s+()./-]/.test(f.telefon)) return { f, field: 'telefon' };
-  if (f.email.length > 254 || !EMAIL.test(f.email)) return { f, field: 'email' };
+  if (f.email && (f.email.length > 254 || !EMAIL.test(f.email))) return { f, field: 'email' };
   return { f, field: '' };
 }
 

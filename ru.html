@@ -65,7 +65,8 @@ header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdro
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:-.03em}
 .brand .d{color:#1E3A8A}.brand .p{color:var(--accent)}
 .nav{display:flex;gap:2px;margin-left:8px}
-.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font-size:15px;color:var(--text-2);border-radius:8px}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font-size:15px;color:var(--text-2);border-radius:8px;white-space:nowrap}
+.nav{flex:none}
 .nav a:hover{color:var(--text);background:var(--bg)}
 .grow{flex:1}
 .seg{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px;gap:2px}
@@ -194,8 +195,9 @@ footer .fine{margin-top:8px;font-size:13px;color:var(--text-3)}
 footer nav{display:flex;flex-wrap:wrap;gap:4px 16px}
 footer nav a{min-height:32px;display:inline-flex;align-items:center}
 footer nav a:hover{color:var(--accent)}
-@media (max-width:1240px){.nav a{padding:0 7px;font-size:14.5px}.hdr-cta.acc{padding:0 12px;position:relative}.hdr-cta.acc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
-@media (max-width:980px){.nav,.hdr-cta{display:none}.mobmenu{display:inline-flex}.hero{padding:56px 0 48px}.feats{padding:64px 0}.feats .wrap{gap:64px}.prices,.dark,.contact{padding:64px 0}.demo,.faqs{padding:0 0 64px}.demo-card{padding:28px}.card{padding:24px}.price{font-size:48px}}
+.hdr-cta.dl,.hdr-cta.acc{position:relative}
+@media (max-width:1340px){.nav a{padding:0 7px;font-size:14.5px}.hdr-cta.dl,.hdr-cta.acc{padding:0 12px}.hdr-cta.dl span,.hdr-cta.acc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+@media (max-width:1020px){.nav,.hdr-cta{display:none}.mobmenu{display:inline-flex}.hero{padding:56px 0 48px}.feats{padding:64px 0}.feats .wrap{gap:64px}.prices,.dark,.contact{padding:64px 0}.demo,.faqs{padding:0 0 64px}.demo-card{padding:28px}.card{padding:24px}.price{font-size:48px}}
 @media (max-width:520px){.row .btn{width:100%}.hdr{gap:8px}.brand{font-size:18px}}</style>
 <script src="analytics.js" defer></script>
 </head>
@@ -206,6 +208,7 @@ footer nav a:hover{color:var(--accent)}
     <nav class="nav" aria-label="Разделы"><a href="#functii">Функции</a><a href="#legea-195">Закон 195</a><a href="#preturi">Цены</a><a href="#faq">Вопросы</a><a href="#contact">Контакты</a></nav>
     <div class="grow"></div>
     <div class="seg" role="group" aria-label="Язык"><a href="index.html" hreflang="ro" lang="ro">RO</a><a class="on" href="ru.html" aria-current="page" hreflang="ru">RU</a></div>
+    <a class="btn sm hdr-cta dl" href="https://cloud.dentpilot.md/cont" title="Скачать"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></svg><span>Скачать</span></a>
     <a class="btn sm hdr-cta acc" href="https://cloud.dentpilot.md/cont" title="Вход / Регистрация"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.3 3.6-5.5 8-5.5s8 2.2 8 5.5"/></svg><span>Вход / Регистрация</span></a>
     <a class="btn sm pri hdr-cta" href="#contact">Заказать презентацию</a>
     <button type="button" class="btn sm mobmenu" aria-label="Меню" aria-expanded="false" aria-controls="menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
@@ -217,6 +220,7 @@ footer nav a:hover{color:var(--accent)}
       <a href="#preturi">Цены</a>
       <a href="#faq">Вопросы</a>
       <a href="#contact">Контакты</a>
+      <a href="https://cloud.dentpilot.md/cont">Скачать</a>
       <a href="https://cloud.dentpilot.md/cont">Вход / Регистрация</a>
       <a class="btn" href="https://demo.dentpilot.md/" target="_blank" rel="noopener">Открыть демо онлайн</a>
       <a class="btn pri" href="#contact">Заказать презентацию</a>

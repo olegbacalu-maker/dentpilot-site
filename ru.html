@@ -90,15 +90,13 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,248,247,.92);backdro
 .hero-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 56px;align-items:end;margin-top:36px}
 .hero-top .lead{max-width:580px}
 .hero-cta .note{margin:12px 0 0;font-size:15px;color:var(--text-2)}
-.show{margin-top:56px;background:var(--accent-soft);border:1px solid #cde4e6;border-radius:28px;padding:12px}
+.show{margin-top:56px;background:var(--accent-soft);border:1px solid #cde4e6;border-radius:28px;padding:12px 12px 14px}
 .show-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 4px 12px}
 .tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .tabs::-webkit-scrollbar{display:none}
 .tabs button{flex:none;min-height:44px;padding:0 18px;border-radius:12px;border:0;background:transparent;font-size:15px;font-weight:600;color:var(--text-2)}
 .tabs button:hover{background:rgba(255,255,255,.6)}
 .tabs button[aria-selected="true"]{background:#fff;color:var(--deep);box-shadow:0 1px 3px rgba(11,58,64,.12)}
-.show-label{flex:none;display:inline-flex;align-items:center;gap:6px;padding-right:8px;font-size:15px;color:var(--text-2)}
-.show .cap{margin:14px 8px 4px;font-size:15px;color:var(--text-2)}
 .benefits{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding:32px 8px 0}
 .benefits span{display:inline-flex;align-items:center;gap:12px;font-size:17px;font-weight:600;color:var(--deep)}
 .benefits svg{color:var(--accent)}
@@ -271,7 +269,6 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .hero-cta .btn{width:100%}
 .show{margin-top:36px;padding:8px;border-radius:20px}
 .show-top{flex-direction:column;align-items:stretch;padding:2px 2px 10px}
-.show-label{padding:0 6px}
 .crop{aspect-ratio:4/3}
 .tabs{flex-wrap:wrap}.tabs button{flex:1 1 40%}
 .crop img{width:185%;max-width:none;height:100%;object-fit:cover;object-position:left top;transform:translateX(var(--sx,0%))}
@@ -321,21 +318,19 @@ footer{padding:48px 0 32px;background:var(--bg)}
     <div class="eb">Программа для стоматологических клиник Молдовы</div>
     <h1>Ваша клиника.<br>Проще. <span class="acc">Организованнее.</span></h1>
     <div class="hero-top">
-      <p class="lead">Записи, карточки пациентов, 3D-одонтограмма и медицинские документы — в одной программе, установленной на компьютере клиники.</p>
+      <p class="lead">Записи, карточки пациентов, 3D-одонтограмма и медицинские документы — в одной программе на компьютере клиники.</p>
       <div class="hero-cta">
         <div class="row"><a class="btn pri" href="https://demo.dentpilot.md/" target="_blank" rel="noopener">Открыть демо онлайн<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a class="btn" href="#contact">Заказать презентацию · 15 мин</a></div>
-        <p class="note">Первый месяц бесплатно · без карты · без обязательств</p>
+        <p class="note">Первый месяц бесплатно, без карты</p>
       </div>
     </div>
     <div class="show">
       <div class="show-top">
-        <div class="tabs" role="tablist" aria-label="Экраны DentPilot"><button type="button" role="tab" id="tab-calendar" aria-selected="true" aria-controls="shot-panel" tabindex="0" data-src="shots/app-calendar.webp" data-alt="Календарь дня со всеми врачами в DentPilot" data-sx="-8%" data-cap="Все врачи на одном экране: свободные окна, статусы, новая запись в один клик.">Календарь дня</button><button type="button" role="tab" id="tab-odontograma" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-odontograma.webp" data-alt="3D-одонтограмма в DentPilot: имплант на 21, коронки, видны корни" data-sx="-23%" data-cap="Состояния зубов и поверхностей — в 3D и в формуле FDI, синхронно.">3D-одонтограмма</button><button type="button" role="tab" id="tab-fisa" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-fisa.webp" data-alt="Карточка пациента в DentPilot: данные, медицинские предупреждения, история" data-sx="-8%" data-cap="История, медицинские предупреждения, документы и план лечения в одном месте.">Карточка пациента</button><button type="button" role="tab" id="tab-statistici" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-statistici.webp" data-alt="Статистика клиники в DentPilot: выручка, записи, явка, загрузка" data-sx="-8%" data-cap="Выручка, записи, явка и загрузка — в сравнении с прошлой неделей.">Статистика</button></div>
-        <span class="show-label">Настоящий интерфейс DentPilot</span>
+        <div class="tabs" role="tablist" aria-label="Экраны DentPilot"><button type="button" role="tab" id="tab-calendar" aria-selected="true" aria-controls="shot-panel" tabindex="0" data-src="shots/app-calendar.webp" data-alt="Календарь дня со всеми врачами в DentPilot" data-sx="-8%">Календарь дня</button><button type="button" role="tab" id="tab-odontograma" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-odontograma.webp" data-alt="3D-одонтограмма в DentPilot: имплант на 21, коронки, видны корни" data-sx="-23%">3D-одонтограмма</button><button type="button" role="tab" id="tab-fisa" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-fisa.webp" data-alt="Карточка пациента в DentPilot: данные, медицинские предупреждения, история" data-sx="-8%">Карточка пациента</button><button type="button" role="tab" id="tab-statistici" aria-selected="false" aria-controls="shot-panel" tabindex="-1" data-src="shots/app-statistici.webp" data-alt="Статистика клиники в DentPilot: выручка, записи, явка, загрузка" data-sx="-8%">Статистика</button></div>
       </div>
       <figure class="frame crop" role="tabpanel" id="shot-panel" aria-labelledby="tab-calendar">
         <img id="shot" src="shots/app-calendar.webp" alt="Календарь дня со всеми врачами в DentPilot" width="2880" height="1545" style="--sx:-8%" fetchpriority="high">
       </figure>
-      <p class="cap" id="shot-cap">Все врачи на одном экране: свободные окна, статусы, новая запись в один клик.</p>
     </div>
     <div class="benefits"><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3l18 18M8.5 8.6A9 9 0 003 11M12 18h.01M9 15a4 4 0 015.6-.4M16.5 12.2A9 9 0 0121 11M11 7a12 12 0 016 1.4"/></svg>Работает офлайн</span><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6z"/></svg>Данные остаются в клинике</span><span><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a3 3 0 100-6 3 3 0 000 6zM3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M17 11a3 3 0 100-6M18 14c2 .6 3 2.6 3 6"/></svg>Пользователи без ограничений</span></div>
   </div>
@@ -525,8 +520,8 @@ var mb=$('.mobmenu'),menu=$('#menu');
 mb.addEventListener('click',function(){var o=menu.hidden;menu.hidden=!o;mb.setAttribute('aria-expanded',String(o))});
 $$('a',menu).forEach(function(a){a.addEventListener('click',function(){menu.hidden=true;mb.setAttribute('aria-expanded','false')})});
 /* вкладки экранов; --sx — сдвиг кадра на телефоне (SHOT в build.py) */
-var tabs=$$('[role=tab]'),img=$('#shot'),cap=$('#shot-cap');
-function pick(i,focus){tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;if(on){img.src=t.dataset.src;img.alt=t.dataset.alt;img.style.setProperty('--sx',t.dataset.sx);cap.textContent=t.dataset.cap;if(focus)t.focus()}})}
+var tabs=$$('[role=tab]'),img=$('#shot');
+function pick(i,focus){tabs.forEach(function(t,j){var on=i===j;t.setAttribute('aria-selected',String(on));t.tabIndex=on?0:-1;if(on){img.src=t.dataset.src;img.alt=t.dataset.alt;img.style.setProperty('--sx',t.dataset.sx);if(focus)t.focus()}})}
 tabs.forEach(function(t,i){t.addEventListener('click',function(){pick(i)});t.addEventListener('keydown',function(e){var k=e.key,n=i;if(k==='ArrowRight')n=(i+1)%tabs.length;else if(k==='ArrowLeft')n=(i+tabs.length-1)%tabs.length;else if(k==='Home')n=0;else if(k==='End')n=tabs.length-1;else return;e.preventDefault();pick(n,true)})});
 var warm=function(){tabs.slice(1).forEach(function(t){var p=new Image();p.src=t.dataset.src})};
 if('requestIdleCallback' in window)requestIdleCallback(warm,{timeout:4000});else setTimeout(warm,2500);

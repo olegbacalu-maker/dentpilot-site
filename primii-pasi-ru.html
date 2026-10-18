@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Первые шаги с DentPilot — установка, активация, настройка</title>
+<meta name="description" content="Пошаговый гид: скачивание и установка DentPilot, PIN директора, активация пробного периода, данные клиники, команда, резервные копии и первая запись.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%230f7b8a'/%3E%3Cpath d='M8.7 5.4c-1.9 0-3.5 1.6-3.5 3.7 0 1.6.7 2.7 1.2 3.9.6 1.4.8 3.7 1.5 5.5.3.8 1.3.8 1.5 0 .5-1.6.7-3.3 1.3-4.3.5-.8 1.4-.8 1.9 0 .7 1 .9 2.7 1.3 4.3.2.8 1.3.8 1.5 0 .7-1.8.9-4.1 1.5-5.5.5-1.2 1.2-2.3 1.2-3.9 0-2.1-1.6-3.7-3.5-3.7-.9 0-1.6.4-2.6.4s-1.6-.4-2.6-.4z' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="canonical" href="https://dentpilot.md/primii-pasi-ru.html">
+<link rel="alternate" hreflang="ro" href="https://dentpilot.md/primii-pasi.html">
+<link rel="alternate" hreflang="ru" href="https://dentpilot.md/primii-pasi-ru.html">
+<link rel="alternate" hreflang="x-default" href="https://dentpilot.md/primii-pasi.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DentPilot">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="ro_RO">
+<meta property="og:url" content="https://dentpilot.md/primii-pasi-ru.html">
+<meta property="og:title" content="Первые шаги с DentPilot">
+<meta property="og:description" content="От скачивания до первой записи: установка, активация, данные клиники и команда.">
+<meta property="og:image" content="https://dentpilot.md/shots/og-ru.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Главный экран DentPilot с расписанием дня">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Первые шаги с DentPilot">
+<meta name="twitter:description" content="От скачивания до первой записи: установка, активация, данные клиники и команда.">
+<meta name="twitter:image" content="https://dentpilot.md/shots/og-ru.png">
+<style>@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/manrope-cyrillic-ext.woff2') format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/manrope-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/manrope-latin-ext.woff2') format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url('fonts/manrope-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+:root{--accent:#0f7b8a;--accent-d:#0c6a77;--accent-soft:#e3f1f2;--accent-softer:#f0f7f7;--deep:#0b3a40;--text:#132a31;--text-2:#3d4f58;--line:#d8e3e5;--bg:#f6f8f7;--mint:#9deee6;--on-deep:#d6ecee;--on-deep-2:#b4d9dd;--disp:'Manrope',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+img{max-width:100%}
+[hidden]{display:none!important}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.dark a:focus-visible,.dark button:focus-visible{outline-color:#fff}
+section{scroll-margin-top:72px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.disp,h1,h2,h3{font-family:var(--disp);letter-spacing:-.02em}
+h1{margin:22px 0 0;font-weight:600;font-size:clamp(42px,6.6vw,88px);line-height:1.02;letter-spacing:-.045em;color:var(--deep)}
+h1 .acc{color:var(--accent)}
+.h2{margin:18px 0 0;font-weight:600;font-size:clamp(32px,4.2vw,54px);line-height:1.07;letter-spacing:-.035em;color:var(--deep)}
+.h3{margin:0;font-weight:600;font-size:clamp(24px,2.4vw,30px);line-height:1.2;color:var(--deep)}
+.eb{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-d)}
+.eb:before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:currentColor}
+.lead{margin:0;font-size:18px;line-height:1.6;color:var(--text-2)}
+.sec{padding:112px 0}
+.head2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px 64px;align-items:end;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:12px;font-size:16px;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--text);white-space:nowrap}
+.btn:hover{background:var(--accent-softer)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.pri:hover{background:var(--accent-d);border-color:var(--accent-d)}
+.btn.sm{min-height:44px;padding:0 16px;font-size:15px}
+.btn svg{flex:none}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.frame{border-radius:18px;background:#fff;border:1px solid var(--line);overflow:hidden;box-shadow:0 20px 50px rgba(11,58,64,.12),0 2px 6px rgba(11,58,64,.05);margin:0}
+.frame img{display:block;width:100%;height:auto}
+
+header{position:sticky;top:0;z-index:30;background:rgba(246,248,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;gap:12px;min-height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:800;font-size:20px;letter-spacing:-.03em}
+.brand .d{color:#1E3A8A}.brand .p{color:var(--accent)}
+.nav{display:flex;gap:2px;margin-left:8px;flex:none}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;font-size:15px;color:var(--text-2);border-radius:8px;white-space:nowrap}
+.nav a:hover{color:var(--text);background:#fff}
+.grow{flex:1}
+.seg{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:10px;padding:3px;gap:2px}
+.seg a,.seg button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:38px;padding:0 14px;border:0;border-radius:8px;background:none;font-size:15px;font-weight:600;color:var(--text-2)}
+.seg .on{background:var(--accent);color:#fff}
+.seg a:hover:not(.on),.seg button:hover:not(.on){background:var(--accent-softer)}
+.mobmenu{display:none;width:48px;padding:0}
+#menu{border-top:1px solid var(--line)}
+#menu .wrap{display:flex;flex-direction:column;padding-top:8px;padding-bottom:16px}
+#menu a{display:flex;align-items:center;min-height:48px;padding:0 8px;border-radius:10px;font-size:16px;font-weight:600;color:var(--text)}
+#menu a:hover{background:#fff}
+#menu .btn{margin-top:10px}
+.hdr-cta.dl,.hdr-cta.acc{position:relative}
+
+/* 1 · первый экран */
+.hero{padding:80px 0 0}
+.hero-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px 56px;align-items:end;margin-top:36px}
+.hero-top .lead{max-width:580px}
+.hero-cta .note{margin:12px 0 0;font-size:15px;color:var(--text-2)}
+.show{margin-top:56px;background:var(--accent-soft);border:1px solid #cde4e6;border-radius:28px;padding:12px 12px 14px}
+.show-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:4px 4px 12px}
+.tabs{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:none;min-height:44px;padding:0 18px;border-radius:12px;border:0;background:transparent;font-size:15px;font-weight:600;color:var(--text-2)}
+.tabs button:hover{background:rgba(255,255,255,.6)}
+.tabs button[aria-selected="true"]{background:#fff;color:var(--deep);box-shadow:0 1px 3px rgba(11,58,64,.12)}
+.benefits{display:flex;justify-content:space-between;gap:16px 32px;flex-wrap:wrap;padding:32px 8px 0}
+.benefits span{display:inline-flex;align-items:center;gap:12px;font-size:17px;font-weight:600;color:var(--deep)}
+.benefits svg{color:var(--accent)}
+/* 01 · работа дня */
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+.items{border-top:1px solid var(--line)}
+.item{display:grid;grid-template-columns:44px minmax(0,1fr) 28px;gap:0 12px;padding:30px 0;border-bottom:1px solid var(--line)}
+.item .n{padding-top:8px;font-size:15px;font-weight:700;color:var(--accent-d)}
+.item h3{margin:0 0 8px;font-size:clamp(21px,2vw,25px);font-weight:600;color:var(--deep)}
+.item p{margin:0;font-size:16px;color:var(--text-2)}
+.item .ic{padding-top:6px;color:var(--accent)}
+.doccard{background:var(--accent-soft);border-radius:26px;padding:28px}
+.doccard .lbl{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-d)}
+.doccard .frame{margin:20px 0 24px;box-shadow:0 12px 30px rgba(11,58,64,.1)}
+.doccard .meta{display:flex;justify-content:space-between;gap:12px;padding:10px 16px;font-size:15px;color:var(--text-2);border-bottom:1px solid var(--line);background:#f8fafb}
+.doccard .frame img{max-height:360px;object-fit:cover;object-position:top}
+.doccard h3{margin:0;font-size:clamp(23px,2.2vw,28px);font-weight:600;line-height:1.2;color:var(--deep)}
+.doccard p{margin:12px 0 0;font-size:16px;color:var(--text-2)}
+/* 02 · 3D, тёмный */
+.dark{background:linear-gradient(160deg,#072a2f 0%,var(--deep) 55%,#0d4c54 100%);color:#fff}
+.dark .eb{color:var(--mint)}
+.dark .h2{color:#fff}
+.dark .lead{color:var(--on-deep)}
+.dark .frame{border-color:rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.feat4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:44px}
+.feat4 svg{color:var(--mint)}
+.feat4 h3{margin:14px 0 6px;font-size:19px;font-weight:600;color:#fff}
+.feat4 p{margin:0;font-size:16px;color:var(--on-deep)}
+/* 03 · директор */
+.s3{align-items:center}
+.listcard{margin-top:32px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px 26px}
+.listcard .hd{display:flex;justify-content:space-between;align-items:center;gap:12px;font-family:var(--disp);font-size:20px;font-weight:600;color:var(--deep)}
+.listcard .hd svg{color:var(--accent)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
+.chip{padding:6px 12px;border-radius:999px;background:var(--accent-soft);color:var(--accent-d);font-size:15px;font-weight:600}
+.chip.off{background:var(--bg);color:var(--text-2)}
+.r{display:grid;grid-template-columns:170px minmax(0,1fr);gap:4px 16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.r b{color:var(--deep);font-weight:600}
+.r span{color:var(--text-2)}
+.excel{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:15px;font-weight:600;color:var(--accent-d)}
+/* детали */
+.det-head{display:flex;justify-content:space-between;align-items:baseline;gap:8px 24px;flex-wrap:wrap;margin-bottom:16px}
+.det-note{font-size:15px;font-weight:600;color:var(--accent-d)}
+.det{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 40px}
+.det .c{padding:28px 0;border-top:1px solid var(--line)}
+.det svg{color:var(--accent)}
+.det h3{margin:12px 0 6px;font-size:19px;font-weight:600;color:var(--deep)}
+.det p{margin:0;font-size:16px;color:var(--text-2)}
+.sms{display:grid;grid-template-columns:auto minmax(0,1fr) minmax(0,1fr);gap:16px 28px;align-items:center;margin-top:32px;padding:24px 28px;border-radius:22px;background:var(--accent-soft)}
+.sms .ic{width:54px;height:54px;border-radius:15px;background:#fff;display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.sms h3{margin:0;font-size:20px;font-weight:600;color:var(--deep)}
+.sms p{margin:4px 0 0;font-size:16px;color:var(--text-2)}
+.sms .lbl{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-d)}
+.badge{padding:3px 11px;border-radius:999px;background:#fff1d6;color:#6b4100;font-size:14px;font-weight:700;letter-spacing:0;text-transform:none}
+/* 04 · закон 195 */
+.law{background:var(--accent-softer)}
+.law .two{align-items:center}
+.scheme{background:var(--deep);border-radius:26px;padding:26px;color:#fff}
+.scheme .top{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--on-deep-2)}
+.scheme .top svg{color:var(--mint)}
+.scheme .box{margin:20px 0;padding:40px 20px;border:1.5px dashed rgba(255,255,255,.3);border-radius:18px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center}
+.scheme .box>svg{color:var(--mint)}
+.scheme .box b{font-family:var(--disp);font-size:24px;font-weight:600}
+.scheme .chips .chip{background:rgba(255,255,255,.1);color:var(--on-deep)}
+.scheme .foot{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--on-deep)}
+.scheme .foot svg{flex:none;color:var(--mint)}
+.lawlist{display:flex;flex-direction:column;gap:28px}
+.lawlist .li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:0 14px}
+.lawlist svg{margin-top:4px;color:var(--accent)}
+.lawlist h3{margin:0 0 6px;font-size:20px;font-weight:600;color:var(--deep)}
+.lawlist p{margin:0;font-size:16px;color:var(--text-2)}
+.lawsms{display:flex;gap:8px 20px;flex-wrap:wrap;align-items:baseline;margin-top:48px;padding-top:22px;border-top:1px solid var(--line);font-size:16px;color:var(--text-2)}
+.lawsms b{font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-d)}
+/* 05 · внедрение */
+.steps4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:44px}
+.st{border-top:1px solid var(--line);padding-top:24px}
+.st .num{font-family:var(--disp);font-size:46px;font-weight:500;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.st h3{margin:18px 0 8px;font-size:19px;font-weight:600;color:var(--deep)}
+.st p{margin:0;font-size:16px;color:var(--text-2)}
+.guide-link{display:inline-flex;align-items:center;gap:10px;margin-top:36px;font-size:17px;font-weight:600;color:var(--accent-d);text-decoration:underline;text-underline-offset:4px}
+.faq-more{display:inline-block;margin-top:6px;font-weight:600;color:var(--accent-d);text-decoration:underline;text-underline-offset:3px}
+/* 06 · цены */
+.prices{padding-top:0}
+.pricepanel{display:grid;grid-template-columns:minmax(0,1fr) 440px;gap:48px;align-items:center;padding:56px;border-radius:32px;background:var(--accent-soft)}
+.pricepanel .lead{margin-top:18px}
+.ul{list-style:none;margin:24px 0 0;padding:0;display:flex;flex-direction:column;gap:12px}
+.ul li{display:flex;gap:12px;align-items:flex-start;font-size:16px;color:var(--text)}
+.ul li svg{flex:none;margin-top:3px;color:var(--accent-d)}
+.pcard{background:#fff;border-radius:26px;padding:28px;display:flex;flex-direction:column;gap:18px;box-shadow:0 20px 50px rgba(11,58,64,.1)}
+.pcard .seg{display:flex;width:100%;background:var(--bg)}
+.pcard .seg button{flex:1;flex-wrap:wrap;row-gap:2px;padding:6px 10px;min-height:46px}
+.pcard .seg .tag{white-space:nowrap;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-d);font-size:14px}
+.pcard .seg .on .tag{background:rgba(255,255,255,.2);color:#fff}
+.price{font-family:var(--disp);font-size:68px;font-weight:600;line-height:1;letter-spacing:-.04em;color:var(--deep);font-variant-numeric:tabular-nums}
+.per{font-size:19px;font-weight:600;color:var(--text-2)}
+.pnote{font-size:15px;color:var(--text-2);min-height:24px;margin-top:8px}
+.pcard hr{margin:0;border:0;border-top:1px solid var(--line)}
+.pcard .tt{font-family:var(--disp);font-size:22px;font-weight:600;color:var(--deep)}
+.pcard .btn{width:100%}
+.pcard .fine{margin:-6px 0 0;text-align:center;font-size:15px;color:var(--text-2)}
+.smsbox{padding:14px 16px;border-radius:14px;background:var(--bg);font-size:15px;color:var(--text-2)}
+.smsbox b{display:block;color:var(--deep)}
+/* 07 · демо */
+.demo-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px 64px;align-items:center}
+.demo-grid .lead{margin-top:22px}
+.aside{padding:32px;border-radius:26px;background:#fff;border:1px solid var(--line)}
+.aside .tt{display:flex;align-items:center;gap:12px;font-family:var(--disp);font-size:24px;font-weight:600;color:var(--deep)}
+.aside .tt svg{flex:none;color:var(--accent)}
+.aside p{margin:12px 0 22px;font-size:16px;color:var(--text-2)}
+.aside .note{margin:12px 0 0;font-size:15px;color:var(--text-2)}
+/* 08 · вопросы */
+.faq-grid{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px 64px;align-items:start}
+.faq-grid .lead{margin-top:20px}
+.callme{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:18px;font-weight:600;color:var(--accent-d)}
+.faq{border-bottom:1px solid var(--line);border-radius:0}
+.faq:first-child{border-top:1px solid var(--line)}
+.faq:has(button[aria-expanded="true"]){background:var(--accent-softer);border-radius:16px;border-color:transparent}
+.faq button{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;padding:0 18px;border:0;background:none;text-align:left;font-family:var(--disp);font-size:clamp(17px,1.6vw,20px);font-weight:600;color:var(--deep);border-radius:16px}
+.faq button svg{flex:none;color:var(--accent);transition:transform .2s}
+.faq button[aria-expanded="true"] svg{transform:rotate(180deg)}
+.faq .a{padding:0 18px 22px;font-size:16px;color:var(--text-2)}
+/* 09 · заявка, тёмный */
+.contact .two{align-items:center}
+.contact .lead{margin-top:22px}
+.ways{margin-top:36px;display:flex;flex-direction:column;gap:14px}
+.ways a{display:inline-flex;align-items:center;gap:14px;font-size:clamp(19px,1.8vw,24px);font-weight:600;color:#fff}
+.ways a:hover{color:var(--mint)}
+.ways svg{flex:none;color:var(--mint)}
+.form{padding:32px;display:flex;flex-direction:column;gap:16px;border:0;box-shadow:0 30px 80px rgba(0,0,0,.3);border-radius:26px}
+.form .tt{margin:0 0 4px;font-family:var(--disp);font-size:24px;font-weight:600;line-height:1.25;color:var(--deep)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:15px;font-weight:600;color:var(--text)}
+.fld .opt{font-weight:400;color:var(--text-2)}
+.fld input{min-height:50px;padding:0 14px;border:1px solid #93a4ab;border-radius:12px;font-size:16px;font-weight:400;color:var(--text);background:#f8faf9;width:100%}
+.fld input:focus{border-color:var(--accent);outline:2px solid var(--accent);outline-offset:0;background:#fff}
+.fld .seg{align-self:flex-start;background:var(--bg)}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.err{margin:0;background:#fdf1ef;color:#9f3a2c;border-radius:10px;padding:12px 15px;font-size:15px;line-height:1.5}
+.err a{color:inherit;font-weight:600}
+.form .btn:disabled{opacity:.72;cursor:progress}
+.form .fine{margin:0;font-size:15px;color:var(--text-2)}
+.form .fine a{color:var(--accent-d);text-decoration:underline}
+.sent{padding:40px 28px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px;border-radius:26px}
+.sent .ok{width:56px;height:56px;border-radius:50%;background:#e3f3ea;color:#1d6b41;display:inline-flex;align-items:center;justify-content:center}
+.sent h3{margin:0;font-size:22px;font-weight:700;color:var(--deep)}
+.sent p{margin:0;font-size:16px;color:var(--text-2)}
+/* подвал */
+footer{padding:48px 0 32px;background:var(--bg)}
+.ft{display:flex;flex-wrap:wrap;gap:24px 48px;justify-content:space-between;align-items:flex-start;font-size:15px;color:var(--text-2)}
+.ft nav{display:grid;grid-template-columns:auto auto;gap:4px 40px}
+.ft nav a{min-height:36px;display:inline-flex;align-items:center;color:var(--text)}
+.ft nav a:hover{color:var(--accent-d)}
+.ft .made{margin-top:8px}
+.fb{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--line);font-size:15px;color:var(--text-2)}
+.fb .langs a{padding:4px 6px;font-weight:600}
+.fb .langs a.on{color:var(--accent-d)}
+
+@media (max-width:1340px){.nav a{padding:0 7px;font-size:14.5px}.hdr-cta.dl,.hdr-cta.acc{padding:0 12px}.hdr-cta.dl span,.hdr-cta.acc span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}}
+@media (max-width:1020px){
+.nav,.hdr-cta{display:none}.mobmenu{display:inline-flex}
+.sec{padding:80px 0}.hero{padding:56px 0 0}
+.hero-top,.head2,.two,.pricepanel,.demo-grid,.faq-grid{grid-template-columns:minmax(0,1fr)}
+.head2{margin-bottom:40px}
+.feat4,.steps4,.det{grid-template-columns:repeat(2,minmax(0,1fr))}
+.pricepanel{padding:36px}
+.law .two .scheme{order:2}
+}
+@media (max-width:640px){
+.wrap{padding:0 18px}
+.sec{padding:64px 0}.hero{padding:40px 0 0}
+.lead{font-size:17px}
+.hero-cta .btn{width:100%}
+.show{margin-top:36px;padding:8px;border-radius:20px}
+.show-top{flex-direction:column;align-items:stretch;padding:2px 2px 10px}
+.crop{aspect-ratio:4/3}
+.tabs{flex-wrap:wrap}.tabs button{flex:1 1 40%}
+.crop img{width:185%;max-width:none;height:100%;object-fit:cover;object-position:left top;transform:translateX(var(--sx,0%))}
+.benefits{flex-direction:column;padding-top:24px}
+.feat4,.steps4,.det,.pair{grid-template-columns:minmax(0,1fr)}
+.sms{grid-template-columns:minmax(0,1fr);padding:22px}
+.r{grid-template-columns:minmax(0,1fr)}
+.item{grid-template-columns:36px minmax(0,1fr)}.item .ic{display:none}
+.doccard,.scheme,.aside,.pcard,.form{padding:22px}
+.pricepanel{padding:22px;border-radius:24px}
+.price{font-size:54px}
+.ft nav{grid-template-columns:minmax(0,1fr)}
+.hdr{gap:8px}.brand{font-size:18px}
+}
+
+.g-hero{padding:64px 0 36px}
+.g-hero h1{font-size:clamp(38px,5vw,64px)}
+.g-hero .lead{max-width:760px;margin-top:18px}
+.g-wrap{display:grid;grid-template-columns:270px minmax(0,1fr);gap:56px;align-items:start;padding-bottom:96px}
+.toc{position:sticky;top:92px;max-height:calc(100vh - 116px);overflow:auto;padding:18px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.toc>b{display:block;margin:0 0 8px 8px;font-size:14px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-d)}
+.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+.toc a{display:flex;gap:10px;padding:7px 8px;border-radius:9px;font-size:15px;line-height:1.35;color:var(--text-2)}
+.toc a:hover{background:var(--accent-softer);color:var(--deep)}
+.toc a span{flex:none;width:24px;font-weight:700;color:var(--accent-d);font-variant-numeric:tabular-nums}
+.gs{padding:0 0 44px;margin:0 0 44px;border-bottom:1px solid var(--line);scroll-margin-top:88px}
+.gs:last-child{border-bottom:0;margin-bottom:0}
+.gh{display:flex;align-items:baseline;gap:14px;margin:0 0 18px}
+.gn{flex:none;font-family:var(--disp);font-size:20px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums}
+.gh h2{margin:0;font-family:var(--disp);font-weight:600;font-size:clamp(26px,2.8vw,34px);line-height:1.15;letter-spacing:-.03em;color:var(--deep)}
+.gs h3{margin:30px 0 10px;font-size:20px;font-weight:600;color:var(--deep)}
+.gs p,.gs li{font-size:17px;line-height:1.65;color:var(--text)}
+.gs p{margin:0 0 14px}
+.gs ul,.gs ol{margin:0 0 16px;padding-left:24px;display:flex;flex-direction:column;gap:8px}
+.gs ol li::marker{font-weight:700;color:var(--accent-d)}
+.gs ul li::marker{color:var(--accent)}
+.ui{font-weight:600;color:var(--deep);background:var(--accent-softer);border:1px solid #d3e7e9;border-radius:6px;padding:0 5px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.gs code{font-family:ui-monospace,Consolas,monospace;font-size:15px;background:#edf3f3;border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.gs a:not(.btn){color:var(--accent-d);text-decoration:underline;text-underline-offset:3px}
+.call{display:flex;gap:14px;padding:16px 18px;border-radius:14px;margin:4px 0 18px}
+.call p{margin:0;font-size:16px}
+.call b{flex:none;padding-top:2px;font-size:14px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+.call.tip{background:var(--accent-soft)}.call.tip b{color:var(--accent-d)}
+.call.warn{background:#fff4dc}.call.warn b{color:#7a4f00}
+.gshot{margin:8px 0 22px}
+.gshot img{display:block;width:100%;height:auto}
+.gs .row{margin:4px 0 20px}
+.g-more{margin-top:8px}
+@media (max-width:1020px){.g-wrap{grid-template-columns:minmax(0,1fr);gap:28px}.toc{position:static;max-height:none}}
+@media (max-width:640px){.g-hero{padding:40px 0 24px}.gs p,.gs li{font-size:16px}.call{flex-direction:column;gap:4px}.gs .btn{width:100%}}</style>
+<script src="analytics.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="wrap hdr">
+    <a class="brand" href="ru.html" aria-label="DentPilot, главная страница"><svg style="flex:none;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 220" width="36" height="28" role="img" aria-label="DentPilot"><defs><mask id="lg1k" maskUnits="userSpaceOnUse" x="0" y="0" width="284" height="220"><rect width="284" height="220" fill="#fff"/><path d="M4.0 160.0 L6.6 160.0 L9.1 159.9 L11.7 159.7 L14.3 159.5 L16.9 159.3 L19.5 159.0 L22.2 158.8 L24.8 158.5 L27.5 158.1 L30.1 157.8 L32.8 157.4 L35.5 157.1 L38.1 156.6 L40.8 156.2 L43.5 155.8 L46.3 155.3 L49.0 154.8 L51.7 154.3 L54.4 153.8 L57.2 153.2 L59.9 152.7 L62.6 152.1 L65.4 151.5 L68.2 150.9 L70.9 150.2 L73.7 149.6 L76.5 148.9 L79.2 148.2 L82.0 147.4 L84.8 146.7 L87.6 145.9 L90.4 145.2 L93.2 144.4 L95.9 143.6 L98.7 142.7 L101.5 141.9 L104.3 141.0 L107.1 140.1 L109.9 139.2 L112.7 138.3 L115.5 137.3 L118.3 136.4 L121.1 135.4 L123.9 134.4 L126.6 133.4 L129.4 132.4 L132.2 131.3 L135.0 130.2 L137.8 129.2 L140.5 128.1 L143.3 126.9 L146.1 125.8 L148.8 124.6 L151.6 123.5 L154.3 122.3 L157.1 121.1 L159.8 119.8 L162.5 118.6 L165.3 117.3 L168.0 116.1 L170.7 114.8 L173.4 113.4 L176.1 112.1 L178.8 110.8 L181.4 109.4 L184.1 108.0 L186.8 106.6 L189.4 105.2 L192.1 103.8 L194.7 102.3 L197.3 100.9 L199.9 99.4 L202.5 97.9 L205.1 96.4 L207.7 94.8 L210.2 93.3 L212.8 91.7 L215.3 90.1 L217.8 88.5 L220.4 86.9 L222.9 85.3 L225.3 83.7 L227.8 82.0 L230.3 80.3 L232.7 78.6 L235.1 76.9 L237.5 75.2 L239.9 73.4 L242.3 71.7 L244.7 69.9 L235.3 58.1 L233.1 59.9 L230.9 61.7 L228.7 63.5 L226.5 65.3 L224.2 67.0 L221.9 68.8 L219.6 70.5 L217.3 72.2 L215.0 73.9 L212.6 75.6 L210.3 77.2 L207.9 78.9 L205.5 80.5 L203.1 82.2 L200.7 83.8 L198.3 85.4 L195.8 86.9 L193.4 88.5 L190.9 90.1 L188.4 91.6 L185.9 93.1 L183.4 94.6 L180.9 96.1 L178.4 97.6 L175.8 99.1 L173.3 100.5 L170.7 102.0 L168.2 103.4 L165.6 104.8 L163.0 106.2 L160.4 107.5 L157.8 108.9 L155.2 110.2 L152.6 111.6 L149.9 112.9 L147.3 114.2 L144.7 115.4 L142.0 116.7 L139.4 118.0 L136.7 119.2 L134.1 120.4 L131.4 121.6 L128.7 122.8 L126.0 124.0 L123.4 125.1 L120.7 126.2 L118.0 127.4 L115.3 128.5 L112.6 129.5 L109.9 130.6 L107.2 131.7 L104.5 132.7 L101.8 133.7 L99.1 134.7 L96.4 135.7 L93.7 136.7 L91.0 137.6 L88.3 138.6 L85.6 139.5 L82.9 140.4 L80.2 141.3 L77.5 142.2 L74.8 143.0 L72.1 143.9 L69.4 144.7 L66.7 145.5 L64.1 146.3 L61.4 147.0 L58.7 147.8 L56.0 148.5 L53.4 149.2 L50.7 149.9 L48.1 150.6 L45.4 151.3 L42.8 151.9 L40.1 152.6 L37.5 153.2 L34.9 153.8 L32.2 154.4 L29.6 155.0 L27.0 155.5 L24.4 156.0 L21.8 156.6 L19.3 157.1 L16.7 157.6 L14.1 158.1 L11.6 158.5 L9.0 159.0 L6.5 159.5 L4.0 160.0Z" fill="#000" stroke="#000" stroke-width="14.0" stroke-linejoin="round"/></mask><linearGradient id="lg1t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ED3BF"/><stop offset=".55" stop-color="#0E9F8A"/><stop offset="1" stop-color="#0A7480"/></linearGradient><linearGradient id="lg1s" gradientUnits="userSpaceOnUse" x1="4" y1="160" x2="272.9" y2="37.9"><stop offset="0" stop-color="#0A7480"/><stop offset=".6" stop-color="#0E9F8A"/><stop offset="1" stop-color="#2ED3BF"/></linearGradient></defs><g mask="url(#lg1k)"><path d="M8.2 3.8C5.9 3.8 4 5.7 4 8.2c0 1.9.8 3.2 1.4 4.7.7 1.7 1 4.4 1.8 6.6.3.9 1.5.9 1.8 0 .6-1.9.8-4 1.6-5.2.6-.9 1.7-.9 2.3 0 .8 1.2 1 3.3 1.6 5.2.3.9 1.5.9 1.8 0 .8-2.2 1.1-4.9 1.8-6.6.6-1.5 1.4-2.8 1.4-4.7 0-2.5-1.9-4.4-4.2-4.4-1.1 0-1.9.5-3.1.5s-2-.5-3.2-.5z" transform="translate(4.0 6.0) scale(9.6)" fill="none" stroke="url(#lg1t)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M4.0 160.0 L6.6 160.0 L9.1 159.9 L11.7 159.7 L14.3 159.5 L16.9 159.3 L19.5 159.0 L22.2 158.8 L24.8 158.5 L27.5 158.1 L30.1 157.8 L32.8 157.4 L35.5 157.1 L38.1 156.6 L40.8 156.2 L43.5 155.8 L46.3 155.3 L49.0 154.8 L51.7 154.3 L54.4 153.8 L57.2 153.2 L59.9 152.7 L62.6 152.1 L65.4 151.5 L68.2 150.9 L70.9 150.2 L73.7 149.6 L76.5 148.9 L79.2 148.2 L82.0 147.4 L84.8 146.7 L87.6 145.9 L90.4 145.2 L93.2 144.4 L95.9 143.6 L98.7 142.7 L101.5 141.9 L104.3 141.0 L107.1 140.1 L109.9 139.2 L112.7 138.3 L115.5 137.3 L118.3 136.4 L121.1 135.4 L123.9 134.4 L126.6 133.4 L129.4 132.4 L132.2 131.3 L135.0 130.2 L137.8 129.2 L140.5 128.1 L143.3 126.9 L146.1 125.8 L148.8 124.6 L151.6 123.5 L154.3 122.3 L157.1 121.1 L159.8 119.8 L162.5 118.6 L165.3 117.3 L168.0 116.1 L170.7 114.8 L173.4 113.4 L176.1 112.1 L178.8 110.8 L181.4 109.4 L184.1 108.0 L186.8 106.6 L189.4 105.2 L192.1 103.8 L194.7 102.3 L197.3 100.9 L199.9 99.4 L202.5 97.9 L205.1 96.4 L207.7 94.8 L210.2 93.3 L212.8 91.7 L215.3 90.1 L217.8 88.5 L220.4 86.9 L222.9 85.3 L225.3 83.7 L227.8 82.0 L230.3 80.3 L232.7 78.6 L235.1 76.9 L237.5 75.2 L239.9 73.4 L242.3 71.7 L244.7 69.9 L235.3 58.1 L233.1 59.9 L230.9 61.7 L228.7 63.5 L226.5 65.3 L224.2 67.0 L221.9 68.8 L219.6 70.5 L217.3 72.2 L215.0 73.9 L212.6 75.6 L210.3 77.2 L207.9 78.9 L205.5 80.5 L203.1 82.2 L200.7 83.8 L198.3 85.4 L195.8 86.9 L193.4 88.5 L190.9 90.1 L188.4 91.6 L185.9 93.1 L183.4 94.6 L180.9 96.1 L178.4 97.6 L175.8 99.1 L173.3 100.5 L170.7 102.0 L168.2 103.4 L165.6 104.8 L163.0 106.2 L160.4 107.5 L157.8 108.9 L155.2 110.2 L152.6 111.6 L149.9 112.9 L147.3 114.2 L144.7 115.4 L142.0 116.7 L139.4 118.0 L136.7 119.2 L134.1 120.4 L131.4 121.6 L128.7 122.8 L126.0 124.0 L123.4 125.1 L120.7 126.2 L118.0 127.4 L115.3 128.5 L112.6 129.5 L109.9 130.6 L107.2 131.7 L104.5 132.7 L101.8 133.7 L99.1 134.7 L96.4 135.7 L93.7 136.7 L91.0 137.6 L88.3 138.6 L85.6 139.5 L82.9 140.4 L80.2 141.3 L77.5 142.2 L74.8 143.0 L72.1 143.9 L69.4 144.7 L66.7 145.5 L64.1 146.3 L61.4 147.0 L58.7 147.8 L56.0 148.5 L53.4 149.2 L50.7 149.9 L48.1 150.6 L45.4 151.3 L42.8 151.9 L40.1 152.6 L37.5 153.2 L34.9 153.8 L32.2 154.4 L29.6 155.0 L27.0 155.5 L24.4 156.0 L21.8 156.6 L19.3 157.1 L16.7 157.6 L14.1 158.1 L11.6 158.5 L9.0 159.0 L6.5 159.5 L4.0 160.0Z" fill="url(#lg1s)"/><path d="M210.7 52.8 L272.9 37.9 L240.0 64.0Z" fill="#2ED3BF"/><path d="M240.0 64.0 L272.9 37.9 L244.3 95.1Z" fill="#0A7480"/></svg><span><span class="d">Dent</span><span class="p">Pilot</span></span></a>
+    <nav class="nav" aria-label="Разделы"><a href="ru.html#functii">Функции</a><a href="ru.html#legea-195">Закон 195</a><a href="ru.html#preturi">Цены</a><a href="ru.html#faq">Вопросы</a><a href="ru.html#contact">Контакты</a></nav>
+    <div class="grow"></div>
+    <div class="seg" role="group" aria-label="Язык"><a href="primii-pasi.html" hreflang="ro" lang="ro">RO</a><a class="on" href="primii-pasi-ru.html" aria-current="page" hreflang="ru">RU</a></div>
+    <a class="btn sm hdr-cta dl" href="https://cloud.dentpilot.md/cont" title="Скачать"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11m0 0l-4-4m4 4l4-4M4 17v2a1 1 0 001 1h14a1 1 0 001-1v-2"/></svg><span>Скачать</span></a>
+    <a class="btn sm hdr-cta acc" href="https://cloud.dentpilot.md/cont" title="Вход / Регистрация"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3.3 3.6-5.5 8-5.5s8 2.2 8 5.5"/></svg><span>Вход / Регистрация</span></a>
+    <a class="btn sm pri hdr-cta" href="ru.html#contact">Заказать презентацию</a>
+    <button type="button" class="btn sm mobmenu" aria-label="Меню" aria-expanded="false" aria-controls="menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <div id="menu" hidden>
+    <div class="wrap">
+      <a href="ru.html#functii">Функции</a>
+      <a href="ru.html#legea-195">Закон 195</a>
+      <a href="ru.html#preturi">Цены</a>
+      <a href="ru.html#faq">Вопросы</a>
+      <a href="ru.html#contact">Контакты</a>
+      <a href="https://cloud.dentpilot.md/cont">Скачать</a>
+      <a href="https://cloud.dentpilot.md/cont">Вход / Регистрация</a>
+      <a class="btn" href="https://demo.dentpilot.md/" target="_blank" rel="noopener">Открыть демо онлайн</a>
+      <a class="btn pri" href="ru.html#contact">Заказать презентацию</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="g-hero">
+  <div class="wrap">
+    <div class="eb">Пошаговый гид</div>
+    <h1>Первые шаги с DentPilot</h1>
+    <p class="lead">От скачивания до первой записи: установка, активация, данные клиники и команда. Около 20 минут. Программа на румынском, поэтому надписи кнопок даны по-румынски.</p>
+  </div>
+</section>
+<div class="wrap g-wrap">
+  <nav class="toc" aria-label="Содержание"><b>Содержание</b><ol><li><a href="#inainte"><span></span>Перед началом</a></li><li><a href="#descarcare"><span>01</span>Скачайте программу</a></li><li><a href="#instalare"><span>02</span>Установите</a></li><li><a href="#pin"><span>03</span>Задайте PIN директора</a></li><li><a href="#activare"><span>04</span>Активируйте пробный период</a></li><li><a href="#clinica"><span>05</span>Заполните данные клиники</a></li><li><a href="#echipa"><span>06</span>Добавьте команду</a></li><li><a href="#siguranta"><span>07</span>Защитите данные</a></li><li><a href="#retea"><span>08</span>Второй компьютер</a></li><li><a href="#prima-zi"><span>09</span>Первый рабочий день</a></li><li><a href="#mai-departe"><span>10</span>Что дальше</a></li></ol></nav>
+  <div class="g-body">
+<section class="gs" id="inainte"><div class="gh"><h2>Перед началом</h2></div>
+<p>Понадобится:</p>
+<ul><li>компьютер с Windows 10 или 11, 64 бита — на регистратуре или тот, что включён весь день;</li><li>интернет для скачивания и активации; дальше программа работает и офлайн;</li><li>e-mail клиники или директора;</li><li>название клиники; IDNO можно добавить позже.</li></ul>
+<div class="call tip"><b>Совет</b><p>Хотите установить вместе? Позвоните <a href="tel:+37360508048">+373 60 508 048</a> — поможем через „Быструю помощь“ Windows, без выезда.</p></div>
+</section>
+<section class="gs" id="descarcare"><div class="gh"><span class="gn">01</span><h2>Скачайте программу</h2></div>
+<p>Программа скачивается бесплатно, без регистрации.</p>
+<div class="row"><a class="btn pri" href="https://cloud.dentpilot.md/descarca">Скачать DentPilot<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></div>
+<ol><li>Скачается архив .zip. Откройте его и извлеките файл установки (правый клик по архиву, затем извлечение файлов).</li><li>Запустите файл <code>DentPilot-Setup</code>.</li></ol>
+<div class="call tip"><b>Совет</b><p>Установщик подписан цифровой подписью: в окнах Windows издатель указан как Oleg Bacalu. Если Windows всё же покажет синее окно SmartScreen, откройте подробности, проверьте издателя и запустите установку.</p></div>
+<h3>Другой путь: кабинет клиники</h3>
+<p>Можно сначала зарегистрироваться в <a href="https://cloud.dentpilot.md/cont">кабинете клиники</a> — через Google или кодом на e-mail — и скачать программу оттуда кнопкой <span class="ui">Descarcă DentPilot</span>. Тогда при активации программа попросит код из письма (шаг 4).</p>
+<figure class="frame gshot"><img src="shots/guide-cont.webp" alt="Кабинет клиники DentPilot со сроком пробного периода и кнопкой скачивания" width="2200" height="1380" loading="lazy"></figure>
+</section>
+<section class="gs" id="instalare"><div class="gh"><span class="gn">02</span><h2>Установите</h2></div>
+<ol><li>Windows спросит, разрешить ли программе вносить изменения, — подтвердите. Установке нужны права администратора.</li><li>Оставьте предложенную папку и нажмите <span class="ui">Înainte</span>.</li><li>На шаге <span class="ui">Acțiuni suplimentare</span> оставьте отмеченным <span class="ui">Scurtătură pe desktop</span>.</li><li>Нажмите <span class="ui">Instalează</span>. Если на компьютере нет компонента Microsoft для отображения (WebView2), установщик скачает его сам.</li><li>В конце нажмите <span class="ui">Gata</span> — программа запустится.</li></ol>
+<div class="call warn"><b>Внимание</b><p>Не отмечайте <span class="ui">Umple registrul cu programări demonstrative</span>. Этот пункт только для презентаций: журнал заполнится вымышленными записями.</p></div>
+<p>Программа ставится в <code>C:\Program Files\DentPilot</code>, а данные клиники лежат отдельно, в <code>C:\ProgramData\DentPilot</code>. Обновления данные не трогают.</p>
+</section>
+<section class="gs" id="pin"><div class="gh"><span class="gn">03</span><h2>Задайте PIN директора</h2></div>
+<p>При первом запуске программа просит PIN — код, которым входят в журнал. С ним создаётся учётная запись директора.</p>
+<ol><li>Введите PIN из 4–8 цифр в оба поля.</li><li>Нажмите <span class="ui">Setează PIN</span>.</li></ol>
+<figure class="frame gshot"><img src="shots/guide-pin.webp" alt="Первый запуск DentPilot: PIN директора" width="2200" height="1380" loading="lazy"></figure>
+<div class="call tip"><b>Совет</b><p>Запишите PIN в надёжном месте. Если забудете, другой директор сменит его в <span class="ui">Securitate și utilizatori</span>; если вы единственный директор — напишите нам.</p></div>
+<p>Первая настройка делается только на компьютере, где установлена программа.</p>
+</section>
+<section class="gs" id="activare"><div class="gh"><span class="gn">04</span><h2>Активируйте пробный период</h2></div>
+<p>После PIN откроется страница <span class="ui">Activarea programului</span>. Заполните:</p>
+<ul><li><span class="ui">Denumirea clinicii</span> — название, обязательно;</li><li>IDNO — 13 цифр; в пробный период можно оставить пустым;</li><li><span class="ui">Persoana de contact</span> и <span class="ui">Telefon</span>;</li><li>e-mail клиники или директора — на него приходят подтверждения и ноты на оплату.</li></ul>
+<ol><li>Отметьте согласие с условиями использования.</li><li>Нажмите <span class="ui">Trimite cererea și activează programul</span>.</li></ol>
+<p>Через несколько секунд программа активируется сама: первый месяц бесплатно, без карты. Лицензия приходит прямо в программу — никаких файлов на почту.</p>
+<figure class="frame gshot"><img src="shots/guide-activare.webp" alt="Страница активации DentPilot с данными клиники" width="2200" height="1380" loading="lazy"></figure>
+<h3>Если клиника уже зарегистрирована</h3>
+<p>Если вы уже регистрировались на сайте или ставите программу на новый компьютер, сервер узнаёт клинику по IDNO или e-mail и присылает шестизначный код на e-mail клиники. Введите его в поле <span class="ui">Codul din e-mail</span> и нажмите <span class="ui">Activează programul</span>. Код действует 15 минут; если не пришёл, проверьте папку „Спам“.</p>
+<div class="call tip"><b>Совет</b><p>Для активации нужен интернет. Дальше программа работает и без него.</p></div>
+</section>
+<section class="gs" id="clinica"><div class="gh"><span class="gn">05</span><h2>Заполните данные клиники</h2></div>
+<p>Программа стартует с примерными данными: <span class="ui">Clinica mea</span>, один врач <span class="ui">Medic 1</span> и услуги без цен. Баннер напоминает их заполнить. Все настройки — в меню <span class="ui">Setări</span>.</p>
+<figure class="frame gshot"><img src="shots/guide-setari.webp" alt="Разделы настроек DentPilot" width="2200" height="1380" loading="lazy"></figure>
+<h3>Клиника</h3>
+<p>Заполните <span class="ui">Nume</span>, <span class="ui">Telefon</span>, адрес на румынском и русском, <span class="ui">Denumirea juridică</span> и IDNO, затем нажмите <span class="ui">Salvează</span>. Название видно в боковом меню и на всех печатных документах, телефон и адрес — на форме 043/e и в согласиях, юридическое название и IDNO — на документах, которые подписывает пациент.</p>
+<figure class="frame gshot"><img src="shots/guide-clinica.webp" alt="Настройки клиники в DentPilot: название, телефон, адрес, IDNO" width="2200" height="1380" loading="lazy"></figure>
+<h3>Вид клиники</h3>
+<p>Загрузите логотип (PNG или JPEG, до 2 МБ) и выберите <span class="ui">Culoare principală</span> и <span class="ui">Stil interfață</span>. Логотип виден на входе и на печатных документах.</p>
+<h3>Часы работы</h3>
+<p>Отметьте выходные дни, задайте часы и обеденный перерыв, затем нажмите <span class="ui">Salvează programul</span>. Перерыв исчезнет из календаря.</p>
+<h3>Услуги</h3>
+<p>Для каждой услуги: название на румынском и русском, цена, длительность (15–120 минут), цвет в календаре и врачи, которые её делают. Строки добавляются кнопкой <span class="ui">Adaugă serviciu</span>, сохранение — <span class="ui">Salvează serviciile</span>.</p>
+<figure class="frame gshot"><img src="shots/guide-servicii.webp" alt="Список услуг DentPilot с ценами и длительностью" width="2200" height="1380" loading="lazy"></figure>
+<h3>Врачи</h3>
+<p>Откройте <span class="ui">Medici</span>. Переименуйте <span class="ui">Medic 1</span> в первого настоящего врача, остальных добавьте кнопкой <span class="ui">Adaugă medic</span>. В карточке врача выберите <span class="ui">Culoare în calendar</span>, загрузите фото и отметьте <span class="ui">Servicii pe care le face</span>. Личные часы можно сузить в пределах часов клиники.</p>
+<figure class="frame gshot"><img src="shots/guide-medic.webp" alt="Список врачей в DentPilot: фото и цвета в календаре" width="2200" height="1380" loading="lazy"></figure>
+<div class="call tip"><b>Совет</b><p>Баннер может исчезнуть после первого сохранения, даже если <span class="ui">Medic 1</span> остался в списке. Проверьте список врачей.</p></div>
+</section>
+<section class="gs" id="echipa"><div class="gh"><span class="gn">06</span><h2>Добавьте команду</h2></div>
+<p>Каждый входит со своим PIN. В <span class="ui">Setări</span> › <span class="ui">Securitate și utilizatori</span>, в блоке <span class="ui">Adaugă utilizator</span>, укажите имя, короткий id (например <code>ana</code>), роль и PIN.</p>
+<ul><li><span class="ui">Director</span> — всё, включая статистику и кассу дня;</li><li><span class="ui">Recepție</span> — записи, пациенты, платежи и список врачей;</li><li><span class="ui">Medic</span> — расписание и пациенты.</li></ul>
+<p>Учётке врача выберите его в списке врачей в той же строке: журнал покажет его имя, а планшет у кресла откроется сразу на его дне. PIN у всех должны быть разными. Кто и когда входил — видно в журнале доступа.</p>
+<figure class="frame gshot"><img src="shots/guide-utilizatori.webp" alt="Пользователи DentPilot: директор, регистратура и врач" width="2200" height="1380" loading="lazy"></figure>
+<div class="call tip"><b>Совет</b><p>Чтобы передать компьютер другому человеку, нажмите <span class="ui">Ieșire din cont</span> в верхней панели.</p></div>
+</section>
+<section class="gs" id="siguranta"><div class="gh"><span class="gn">07</span><h2>Защитите данные</h2></div>
+<p>Ежедневная автоматическая копия включена с установки и хранится на том же компьютере. Положите копию и за его пределами:</p>
+<ol><li>В <span class="ui">Setări</span> › <span class="ui">Copie de rezervă</span> выберите папку на другом диске, на флешке или в папке, которая синхронизируется с облаком.</li><li>Задайте пароль копии — не меньше 10 знаков — и запишите его на бумаге. Без него копию не открыть.</li><li>Нажмите <span class="ui">Salvează</span>, затем <span class="ui">Fă o copie acum</span>.</li></ol>
+<figure class="frame gshot"><img src="shots/guide-copie.webp" alt="Резервная копия DentPilot: папка, пароль, сделанные копии" width="2200" height="1380" loading="lazy"></figure>
+<p>По желанию <span class="ui">Criptarea evidenței</span> шифрует базу данных. Перед включением программа печатает лист восстановления — храните его в папке клиники: это единственный способ открыть данные на другом компьютере. Для Закона 195 достаточно и шифрования диска BitLocker.</p>
+</section>
+<section class="gs" id="retea"><div class="gh"><span class="gn">08</span><h2>Второй компьютер</h2></div>
+<p>Шаг по желанию. Журнал один: не устанавливайте программу на второй компьютер — получится отдельная, пустая картотека.</p>
+<ol><li>На компьютере с программой: <span class="ui">Setări</span> › <span class="ui">Acces din rețea</span> › <span class="ui">Activează accesul</span>. Программа перезапустится.</li><li>Если появится кнопка <span class="ui">Creează regula de firewall</span>, нажмите её и подтвердите в Windows.</li><li>Запишите показанный адрес вида <code>http://192.168.x.x:8088/admin</code>. На странице есть и QR-код для телефона.</li><li>На втором компьютере откройте адрес в Chrome или Edge, войдите со своим PIN и сохраните страницу в закладки.</li></ol>
+<div class="call warn"><b>Внимание</b><p>Доступ по сети включается, только когда у всех PIN не меньше 6 цифр.</p></div>
+</section>
+<section class="gs" id="prima-zi"><div class="gh"><span class="gn">09</span><h2>Первый рабочий день</h2></div>
+<h3>Новый пациент</h3>
+<p><span class="ui">Pacienți</span> › <span class="ui">Adaugă pacient</span>: имя, телефон (или <span class="ui">fără telefon</span>), дата рождения, лечащий врач. Тот же телефон не создаёт дубль — откроется существующая карточка.</p>
+<h3>Первая запись</h3>
+<p>Три пути ведут к одному результату:</p>
+<ul><li>кнопка <span class="ui">Programare nouă</span> в верхней панели: дата, время, врач, услуга и пациент — он найдётся по телефону или создастся;</li><li>клик по свободному часу на <span class="ui">Panoul principal</span>;</li><li>из карточки пациента кнопкой <span class="ui">Programează</span> — показывает только свободные окна.</li></ul>
+<figure class="frame gshot"><img src="shots/guide-programare.webp" alt="Новая запись в DentPilot: дата, время, врач, услуга, пациент" width="2200" height="1380" loading="lazy"></figure>
+<h3>Пациент пришёл</h3>
+<p>На записи нажимайте по очереди <span class="ui">A venit</span>, <span class="ui">În cabinet</span> и <span class="ui">Finalizat</span>; <span class="ui">În cabinet</span> можно пропустить. Если пациент не пришёл — <span class="ui">Nu a venit</span>.</p>
+<h3>Карточка пациента</h3>
+<ul><li><span class="ui">Anamneză</span> — 12 вопросов, аллергии и лекарства; анкета печатается и для пациента, на его языке;</li><li><span class="ui">Date pacient</span> › <span class="ui">Informare / acord — tipărire</span> — уведомление об обработке данных (Закон 195);</li><li><span class="ui">Plan și plăți</span> — процедуры с ценами, <span class="ui">Acord informat</span> на план и <span class="ui">Înregistrează plata</span>; баланс считается сам;</li><li><span class="ui">Vizite</span> › <span class="ui">Consultație</span> — жалобы, диагноз, лечение; дневник попадает в форму 043/e;</li><li><span class="ui">Fișa 043/e</span> в шапке карточки — печатается заполненной.</li></ul>
+<figure class="frame gshot"><img src="shots/guide-pacient.webp" alt="Карточка пациента DentPilot: план лечения и платежи" width="2200" height="1380" loading="lazy"></figure>
+</section>
+<section class="gs" id="mai-departe"><div class="gh"><span class="gn">10</span><h2>Что дальше</h2></div>
+<ul><li>Лицензия и оплата: <span class="ui">Setări</span> › <span class="ui">Licența</span> показывает срок, <span class="ui">Plătește acum</span> открывает оплату. То же — в <a href="https://cloud.dentpilot.md/cont">кабинете клиники</a>.</li><li>Обновления: программа сообщает о новой версии; <span class="ui">Setări</span> › <span class="ui">Stare sistem</span> › <span class="ui">Actualizează acum</span>. Данные остаются нетронутыми.</li><li>Вопросы: <span class="ui">Setări</span> › <span class="ui">Întrebări frecvente</span> — копии, сеть, Закон 195, забытый PIN.</li><li>Помощь: <a href="tel:+37360508048">+373 60 508 048</a>, <a href="mailto:contact@dentpilot.md">contact@dentpilot.md</a>.</li></ul>
+<div class="row"><a class="btn pri" href="https://demo.dentpilot.md/" target="_blank" rel="noopener">Открыть демо онлайн<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a><a class="btn" href="ru.html#contact">Заказать презентацию</a></div>
+</section></div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft">
+      <div>
+        <div class="brand"><svg style="flex:none;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 284 220" width="30" height="23" role="img" aria-label="DentPilot"><defs><mask id="lg2k" maskUnits="userSpaceOnUse" x="0" y="0" width="284" height="220"><rect width="284" height="220" fill="#fff"/><path d="M4.0 160.0 L6.6 160.0 L9.1 159.9 L11.7 159.7 L14.3 159.5 L16.9 159.3 L19.5 159.0 L22.2 158.8 L24.8 158.5 L27.5 158.1 L30.1 157.8 L32.8 157.4 L35.5 157.1 L38.1 156.6 L40.8 156.2 L43.5 155.8 L46.3 155.3 L49.0 154.8 L51.7 154.3 L54.4 153.8 L57.2 153.2 L59.9 152.7 L62.6 152.1 L65.4 151.5 L68.2 150.9 L70.9 150.2 L73.7 149.6 L76.5 148.9 L79.2 148.2 L82.0 147.4 L84.8 146.7 L87.6 145.9 L90.4 145.2 L93.2 144.4 L95.9 143.6 L98.7 142.7 L101.5 141.9 L104.3 141.0 L107.1 140.1 L109.9 139.2 L112.7 138.3 L115.5 137.3 L118.3 136.4 L121.1 135.4 L123.9 134.4 L126.6 133.4 L129.4 132.4 L132.2 131.3 L135.0 130.2 L137.8 129.2 L140.5 128.1 L143.3 126.9 L146.1 125.8 L148.8 124.6 L151.6 123.5 L154.3 122.3 L157.1 121.1 L159.8 119.8 L162.5 118.6 L165.3 117.3 L168.0 116.1 L170.7 114.8 L173.4 113.4 L176.1 112.1 L178.8 110.8 L181.4 109.4 L184.1 108.0 L186.8 106.6 L189.4 105.2 L192.1 103.8 L194.7 102.3 L197.3 100.9 L199.9 99.4 L202.5 97.9 L205.1 96.4 L207.7 94.8 L210.2 93.3 L212.8 91.7 L215.3 90.1 L217.8 88.5 L220.4 86.9 L222.9 85.3 L225.3 83.7 L227.8 82.0 L230.3 80.3 L232.7 78.6 L235.1 76.9 L237.5 75.2 L239.9 73.4 L242.3 71.7 L244.7 69.9 L235.3 58.1 L233.1 59.9 L230.9 61.7 L228.7 63.5 L226.5 65.3 L224.2 67.0 L221.9 68.8 L219.6 70.5 L217.3 72.2 L215.0 73.9 L212.6 75.6 L210.3 77.2 L207.9 78.9 L205.5 80.5 L203.1 82.2 L200.7 83.8 L198.3 85.4 L195.8 86.9 L193.4 88.5 L190.9 90.1 L188.4 91.6 L185.9 93.1 L183.4 94.6 L180.9 96.1 L178.4 97.6 L175.8 99.1 L173.3 100.5 L170.7 102.0 L168.2 103.4 L165.6 104.8 L163.0 106.2 L160.4 107.5 L157.8 108.9 L155.2 110.2 L152.6 111.6 L149.9 112.9 L147.3 114.2 L144.7 115.4 L142.0 116.7 L139.4 118.0 L136.7 119.2 L134.1 120.4 L131.4 121.6 L128.7 122.8 L126.0 124.0 L123.4 125.1 L120.7 126.2 L118.0 127.4 L115.3 128.5 L112.6 129.5 L109.9 130.6 L107.2 131.7 L104.5 132.7 L101.8 133.7 L99.1 134.7 L96.4 135.7 L93.7 136.7 L91.0 137.6 L88.3 138.6 L85.6 139.5 L82.9 140.4 L80.2 141.3 L77.5 142.2 L74.8 143.0 L72.1 143.9 L69.4 144.7 L66.7 145.5 L64.1 146.3 L61.4 147.0 L58.7 147.8 L56.0 148.5 L53.4 149.2 L50.7 149.9 L48.1 150.6 L45.4 151.3 L42.8 151.9 L40.1 152.6 L37.5 153.2 L34.9 153.8 L32.2 154.4 L29.6 155.0 L27.0 155.5 L24.4 156.0 L21.8 156.6 L19.3 157.1 L16.7 157.6 L14.1 158.1 L11.6 158.5 L9.0 159.0 L6.5 159.5 L4.0 160.0Z" fill="#000" stroke="#000" stroke-width="14.0" stroke-linejoin="round"/></mask><linearGradient id="lg2t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2ED3BF"/><stop offset=".55" stop-color="#0E9F8A"/><stop offset="1" stop-color="#0A7480"/></linearGradient><linearGradient id="lg2s" gradientUnits="userSpaceOnUse" x1="4" y1="160" x2="272.9" y2="37.9"><stop offset="0" stop-color="#0A7480"/><stop offset=".6" stop-color="#0E9F8A"/><stop offset="1" stop-color="#2ED3BF"/></linearGradient></defs><g mask="url(#lg2k)"><path d="M8.2 3.8C5.9 3.8 4 5.7 4 8.2c0 1.9.8 3.2 1.4 4.7.7 1.7 1 4.4 1.8 6.6.3.9 1.5.9 1.8 0 .6-1.9.8-4 1.6-5.2.6-.9 1.7-.9 2.3 0 .8 1.2 1 3.3 1.6 5.2.3.9 1.5.9 1.8 0 .8-2.2 1.1-4.9 1.8-6.6.6-1.5 1.4-2.8 1.4-4.7 0-2.5-1.9-4.4-4.2-4.4-1.1 0-1.9.5-3.1.5s-2-.5-3.2-.5z" transform="translate(4.0 6.0) scale(9.6)" fill="none" stroke="url(#lg2t)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/></g><path d="M4.0 160.0 L6.6 160.0 L9.1 159.9 L11.7 159.7 L14.3 159.5 L16.9 159.3 L19.5 159.0 L22.2 158.8 L24.8 158.5 L27.5 158.1 L30.1 157.8 L32.8 157.4 L35.5 157.1 L38.1 156.6 L40.8 156.2 L43.5 155.8 L46.3 155.3 L49.0 154.8 L51.7 154.3 L54.4 153.8 L57.2 153.2 L59.9 152.7 L62.6 152.1 L65.4 151.5 L68.2 150.9 L70.9 150.2 L73.7 149.6 L76.5 148.9 L79.2 148.2 L82.0 147.4 L84.8 146.7 L87.6 145.9 L90.4 145.2 L93.2 144.4 L95.9 143.6 L98.7 142.7 L101.5 141.9 L104.3 141.0 L107.1 140.1 L109.9 139.2 L112.7 138.3 L115.5 137.3 L118.3 136.4 L121.1 135.4 L123.9 134.4 L126.6 133.4 L129.4 132.4 L132.2 131.3 L135.0 130.2 L137.8 129.2 L140.5 128.1 L143.3 126.9 L146.1 125.8 L148.8 124.6 L151.6 123.5 L154.3 122.3 L157.1 121.1 L159.8 119.8 L162.5 118.6 L165.3 117.3 L168.0 116.1 L170.7 114.8 L173.4 113.4 L176.1 112.1 L178.8 110.8 L181.4 109.4 L184.1 108.0 L186.8 106.6 L189.4 105.2 L192.1 103.8 L194.7 102.3 L197.3 100.9 L199.9 99.4 L202.5 97.9 L205.1 96.4 L207.7 94.8 L210.2 93.3 L212.8 91.7 L215.3 90.1 L217.8 88.5 L220.4 86.9 L222.9 85.3 L225.3 83.7 L227.8 82.0 L230.3 80.3 L232.7 78.6 L235.1 76.9 L237.5 75.2 L239.9 73.4 L242.3 71.7 L244.7 69.9 L235.3 58.1 L233.1 59.9 L230.9 61.7 L228.7 63.5 L226.5 65.3 L224.2 67.0 L221.9 68.8 L219.6 70.5 L217.3 72.2 L215.0 73.9 L212.6 75.6 L210.3 77.2 L207.9 78.9 L205.5 80.5 L203.1 82.2 L200.7 83.8 L198.3 85.4 L195.8 86.9 L193.4 88.5 L190.9 90.1 L188.4 91.6 L185.9 93.1 L183.4 94.6 L180.9 96.1 L178.4 97.6 L175.8 99.1 L173.3 100.5 L170.7 102.0 L168.2 103.4 L165.6 104.8 L163.0 106.2 L160.4 107.5 L157.8 108.9 L155.2 110.2 L152.6 111.6 L149.9 112.9 L147.3 114.2 L144.7 115.4 L142.0 116.7 L139.4 118.0 L136.7 119.2 L134.1 120.4 L131.4 121.6 L128.7 122.8 L126.0 124.0 L123.4 125.1 L120.7 126.2 L118.0 127.4 L115.3 128.5 L112.6 129.5 L109.9 130.6 L107.2 131.7 L104.5 132.7 L101.8 133.7 L99.1 134.7 L96.4 135.7 L93.7 136.7 L91.0 137.6 L88.3 138.6 L85.6 139.5 L82.9 140.4 L80.2 141.3 L77.5 142.2 L74.8 143.0 L72.1 143.9 L69.4 144.7 L66.7 145.5 L64.1 146.3 L61.4 147.0 L58.7 147.8 L56.0 148.5 L53.4 149.2 L50.7 149.9 L48.1 150.6 L45.4 151.3 L42.8 151.9 L40.1 152.6 L37.5 153.2 L34.9 153.8 L32.2 154.4 L29.6 155.0 L27.0 155.5 L24.4 156.0 L21.8 156.6 L19.3 157.1 L16.7 157.6 L14.1 158.1 L11.6 158.5 L9.0 159.0 L6.5 159.5 L4.0 160.0Z" fill="url(#lg2s)"/><path d="M210.7 52.8 L272.9 37.9 L240.0 64.0Z" fill="#2ED3BF"/><path d="M240.0 64.0 L272.9 37.9 L244.3 95.1Z" fill="#0A7480"/></svg><span><span class="d">Dent</span><span class="p">Pilot</span></span></div>
+        <div class="made">Программа разработана в Молдове</div>
+      </div>
+      <nav aria-label="Ссылки подвала"><a href="privacy.html">Политика конфиденциальности</a><a href="termeni.html">Условия использования</a><a href="primii-pasi-ru.html">Первые шаги</a><a href="descarca-ru.html">Скачать программу</a><a href="https://cloud.dentpilot.md/cont">Кабинет клиники</a><a href="#" data-dp-consent hidden>Настройки cookie</a></nav>
+    </div>
+    <div class="fb"><span>Oleg Bacalu, antreprenor independent · IDNO 1026023148339 · © 2026</span><span class="langs"><a href="primii-pasi.html" hreflang="ro" lang="ro">RO</a> / <a class="on" href="primii-pasi-ru.html" aria-current="page" hreflang="ru">RU</a></span></div>
+  </div>
+</footer>
+<script>
+(function(){var mb=document.querySelector('.mobmenu'),menu=document.getElementById('menu');
+mb.addEventListener('click',function(){var o=menu.hidden;menu.hidden=!o;mb.setAttribute('aria-expanded',String(o))});
+Array.prototype.forEach.call(menu.querySelectorAll('a'),function(a){a.addEventListener('click',function(){menu.hidden=true;mb.setAttribute('aria-expanded','false')})});
+})();
+</script>
+</body>
+</html>

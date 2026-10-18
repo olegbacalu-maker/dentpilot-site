@@ -6,7 +6,7 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/ru.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/"/>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -14,7 +14,7 @@
     <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/ru.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/"/>
-    <lastmod>2026-10-16</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -47,5 +47,21 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/descarca.html"/>
     <lastmod>2026-10-16</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dentpilot.md/primii-pasi.html</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/primii-pasi.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/primii-pasi-ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/primii-pasi.html"/>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://dentpilot.md/primii-pasi-ru.html</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://dentpilot.md/primii-pasi.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://dentpilot.md/primii-pasi-ru.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://dentpilot.md/primii-pasi.html"/>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
   </url>
 </urlset>

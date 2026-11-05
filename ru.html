@@ -287,6 +287,9 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .ft .social a:hover{color:var(--accent-d);border-color:var(--accent)}
 .fb{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--line);font-size:15px;color:var(--text-2)}
 .fb .pay{display:inline-flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+/* пять знаков оплаты (05.11) в одну строку с реквизитами и RO/RU не входят: на широком экране — своя
+   строка под реквизитами, переключатель языка остаётся справа в первой; уже — естественный перенос */
+@media (min-width:1021px){.fb .pay{order:3;flex-basis:100%}}
 .fb .pay img{display:block;height:24px;width:auto}
 .fb .langs a{padding:4px 6px;font-weight:600}
 .fb .langs a.on{color:var(--accent-d)}
@@ -584,7 +587,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
       </div>
       <nav aria-label="Ссылки подвала"><a href="privacy.html">Политика конфиденциальности</a><a href="termeni.html">Условия использования</a><a href="primii-pasi-ru.html">Первые шаги</a><a href="#cerinte">Системные требования</a><a href="descarca-ru.html">Скачать программу</a><a href="https://cloud.dentpilot.md/cont">Кабинет клиники</a><a href="#" data-dp-consent hidden>Настройки cookie</a></nav>
     </div>
-    <div class="fb"><span>Oleg Bacalu, antreprenor independent · IDNO 1026023148339 · MD-3909, or. Cahul, str. Stejarilor 30 · © 2026</span><span class="pay"><img src="shots/pay/maib.png" alt="maib" width="156" height="44"><img src="shots/pay/visa.png" alt="Visa" width="80" height="26"><img src="shots/pay/mastercard.png" alt="Mastercard" width="74" height="46"></span><span class="langs"><a href="index.html" hreflang="ro" lang="ro">RO</a> / <a class="on" href="ru.html" aria-current="page" hreflang="ru">RU</a></span></div>
+    <div class="fb"><span>Oleg Bacalu, antreprenor independent · IDNO 1026023148339 · MD-3909, or. Cahul, str. Stejarilor 30 · © 2026</span><span class="pay"><img src="shots/pay/maib.png" alt="maib" width="156" height="44"><img src="shots/pay/visa.png" alt="Visa" width="80" height="26"><img src="shots/pay/mastercard.png" alt="Mastercard" width="74" height="46"><img src="shots/pay/google-pay.svg" alt="Google Pay" width="1094" height="742" style="height:44.52px;margin:-10.20px -10.28px -10.32px -10.24px"><img src="shots/pay/apple-pay.svg" alt="Apple Pay" width="166" height="106"></span><span class="langs"><a href="index.html" hreflang="ro" lang="ro">RO</a> / <a class="on" href="ru.html" aria-current="page" hreflang="ru">RU</a></span></div>
   </div>
 </footer>
 <script>

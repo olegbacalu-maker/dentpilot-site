@@ -1,0 +1,2 @@
+# Official payment marks are stored byte for byte (no line-ending conversion): the brand rules forbid altering the artwork
+shots/pay/*.svg -text

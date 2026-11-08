@@ -128,6 +128,7 @@ header{position:sticky;top:0;z-index:30;background:rgba(246,248,247,.92);backdro
 .dark .lead{color:var(--on-deep)}
 .dark .frame{border-color:rgba(255,255,255,.18);box-shadow:0 30px 80px rgba(0,0,0,.35)}
 .feat4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;margin-top:44px}
+.feat4.n5{grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
 .feat4 svg{color:var(--mint)}
 .feat4 h3{margin:14px 0 6px;font-size:19px;font-weight:600;color:#fff}
 .feat4 p{margin:0;font-size:16px;color:var(--on-deep)}
@@ -299,7 +300,8 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .sec{padding:80px 0}.hero{padding:56px 0 0}
 .hero-top,.head2,.two,.phead,.demo-grid,.faq-grid{grid-template-columns:minmax(0,1fr)}
 .head2{margin-bottom:40px}
-.feat4,.steps4,.det,.req .det{grid-template-columns:repeat(2,minmax(0,1fr))}
+.feat4,.feat4.n5,.steps4,.det,.req .det{grid-template-columns:repeat(2,minmax(0,1fr))}
+.feat4.n5>:last-child:nth-child(odd){grid-column:1/-1}
 .pricepanel{padding:36px}.ptab-card{padding:8px 18px 18px}
 .law .two .scheme{order:2}
 }
@@ -314,7 +316,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .tabs{flex-wrap:wrap}.tabs button{flex:1 1 40%}
 .crop img{width:185%;max-width:none;height:100%;object-fit:cover;object-position:left top;transform:translateX(var(--sx,0%))}
 .benefits{flex-direction:column;padding-top:24px}
-.feat4,.steps4,.det,.req .det,.pair{grid-template-columns:minmax(0,1fr)}
+.feat4,.feat4.n5,.steps4,.det,.req .det,.pair{grid-template-columns:minmax(0,1fr)}
 .sms{grid-template-columns:minmax(0,1fr);padding:22px}
 .r{grid-template-columns:minmax(0,1fr)}
 .item{grid-template-columns:36px minmax(0,1fr)}.item .ic{display:none}
@@ -523,7 +525,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 <h3>Пациент пришёл</h3>
 <p>Клик по записи (или правый клик) — и по очереди <span class="ui">A venit</span>, <span class="ui">În cabinet</span> и <span class="ui">Finalizat</span>; <span class="ui">În cabinet</span> можно пропустить. Если пациент не пришёл — <span class="ui">Nu a venit</span>.</p>
 <h3>Карточка пациента</h3>
-<ul><li><span class="ui">Date pacient</span> › <span class="ui">Anamneză</span> — 12 заболеваний или <span class="ui">Niciuna dintre afecțiunile de mai sus</span>, аллергии и лекарства; <span class="ui">Formular pentru pacient</span> печатает анкету на языке пациента;</li><li><span class="ui">Date pacient</span> › <span class="ui">Informare / acord — tipărire</span> — уведомление об обработке данных (Закон 195);</li><li><span class="ui">Date pacient</span> › <span class="ui">Ocluzia</span> — окклюзия (класс Angle, overjet, overbite, средняя линия); печатается в форме 043/e;</li><li><span class="ui">Plan și plăți</span> — процедуры с ценами, <span class="ui">Acord informat</span> на план (<span class="ui">Tipărește</span>) и <span class="ui">Înregistrează plata</span>; баланс считается сам по завершённым процедурам;</li><li><span class="ui">Vizite</span> › <span class="ui">Consultație</span> — жалобы, диагноз, лечение; дневник попадает в форму 043/e;</li><li><span class="ui">Odontogramă</span> и <span class="ui">Parodontogramă</span> — состояние зубов и дёсен; <span class="ui">Documente</span> — бланки для печати и подписанные сканы;</li><li><span class="ui">Fișa 043/e</span> в шапке карточки — печатается заполненной.</li></ul>
+<ul><li><span class="ui">Date pacient</span> › <span class="ui">Anamneză</span> — 12 заболеваний или <span class="ui">Niciuna dintre afecțiunile de mai sus</span>, аллергии и лекарства; <span class="ui">Formular pentru pacient</span> печатает анкету на языке пациента;</li><li><span class="ui">Date pacient</span> › <span class="ui">Informare / acord — tipărire</span> — уведомление об обработке данных (Закон 195);</li><li><span class="ui">Odontogramă</span> › <span class="ui">Ocluzia</span> — окклюзия (класс Angle, overjet, overbite, средняя линия) в панели справа, пока не выбран зуб; со слоем <span class="ui">Ocluzie</span> 3D-модель схематично показывает положение челюстей; строка <span class="ui">Ocluzia</span> в <span class="ui">Date pacient</span> ведёт к той же форме; печатается в форме 043/e;</li><li><span class="ui">Plan și plăți</span> — процедуры с ценами, <span class="ui">Acord informat</span> на план (<span class="ui">Tipărește</span>) и <span class="ui">Înregistrează plata</span>; баланс считается сам по завершённым процедурам;</li><li><span class="ui">Vizite</span> › <span class="ui">Consultație</span> — жалобы, диагноз, лечение; дневник попадает в форму 043/e;</li><li><span class="ui">Odontogramă</span> и <span class="ui">Parodontogramă</span> — состояние зубов и дёсен; <span class="ui">Documente</span> — бланки для печати и подписанные сканы;</li><li><span class="ui">Fișa 043/e</span> в шапке карточки — печатается заполненной.</li></ul>
 <figure class="frame gshot"><img src="shots/guide-pacient.webp" alt="Карточка пациента DentPilot™: план лечения и платежи" width="2200" height="1380" loading="lazy"></figure>
 </section>
 <section class="gs" id="rechemari"><div class="gh"><span class="gn">11</span><h2>Rechemări: пациенты возвращаются на контроль</h2></div>

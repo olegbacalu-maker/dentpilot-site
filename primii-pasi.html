@@ -311,7 +311,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .feat4.n5>:last-child:nth-child(odd){grid-column:1/-1}
 .pricepanel{padding:36px}.ptab-card{padding:8px 18px 18px}
 .law .two .scheme{order:2}
-.tabs{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.tabs{flex:1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.tabs button{padding:4px 8px;line-height:1.25}.tabs button:last-child{grid-column:span 2}
 }
 @media (max-width:640px){
 .wrap{padding:0 18px}
@@ -321,7 +321,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .show{margin-top:36px;padding:8px;border-radius:20px}
 .show-top{flex-direction:column;align-items:stretch;padding:2px 2px 10px}
 .crop{aspect-ratio:4/3}
-.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.tabs button{padding:0 8px}
+.tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.tabs button{padding:0 8px}.tabs button:last-child:nth-child(odd){grid-column:1/-1}
 .crop img{width:185%;max-width:none;height:100%;object-fit:cover;object-position:left top;transform:translateX(var(--sx,0%))}
 .benefits{flex-direction:column;padding-top:24px}
 .feat4,.feat4.n5,.steps4,.det,.req .det,.pair{grid-template-columns:minmax(0,1fr)}

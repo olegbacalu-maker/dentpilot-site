@@ -311,6 +311,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .feat4.n5>:last-child:nth-child(odd){grid-column:1/-1}
 .pricepanel{padding:36px}.ptab-card{padding:8px 18px 18px}
 .law .two .scheme{order:2}
+.tabs{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:640px){
 .wrap{padding:0 18px}
@@ -320,7 +321,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .show{margin-top:36px;padding:8px;border-radius:20px}
 .show-top{flex-direction:column;align-items:stretch;padding:2px 2px 10px}
 .crop{aspect-ratio:4/3}
-.tabs{flex-wrap:wrap}.tabs button{flex:1 1 40%}
+.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.tabs button{padding:0 8px}
 .crop img{width:185%;max-width:none;height:100%;object-fit:cover;object-position:left top;transform:translateX(var(--sx,0%))}
 .benefits{flex-direction:column;padding-top:24px}
 .feat4,.feat4.n5,.steps4,.det,.req .det,.pair{grid-template-columns:minmax(0,1fr)}
@@ -508,7 +509,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 <p>Pas opțional. Registrul este unul singur: nu instalați programul și pe al doilea calculator — ar fi o evidență separată, goală.</p>
 <ol><li>Pe calculatorul cu programul: <span class="ui">Setări</span> › <span class="ui">Acces din rețea</span> › <span class="ui">Activează accesul</span>. Programul repornește.</li><li>Dacă apare butonul <span class="ui">Creează regula de firewall</span>, apăsați-l și confirmați în Windows.</li><li>Notați adresa afișată, de forma <code>http://192.168.x.x:8088/admin</code>. Pagina arată și un cod QR pentru telefon.</li><li>Pe al doilea calculator deschideți adresa în Chrome sau Edge. La <span class="ui">Alegeți persoana</span> alegeți-vă numele, introduceți PIN-ul și salvați pagina la favorite.</li></ol>
 <div class="call warn"><b>Atenție</b><p>Accesul din rețea se activează doar când toate PIN-urile au cel puțin 6 cifre.</p></div>
-<p>Câteva lucruri se fac doar pe calculatorul cu programul: copia de rezervă pe stick, folderul copiilor de rezervă, restaurarea din copie, criptarea și foaia ei de recuperare, utilizatorii, exporturile în Excel (lista pacienților, registrul), importul pacienților din fișier. Din rețea paginile lor se pot citi, dar nu schimba — în locul butoanelor scrie că acțiunea se face doar pe calculatorul principal.</p>
+<p>Câteva lucruri se fac doar pe calculatorul cu programul: copia de rezervă pe stick, folderul copiilor de rezervă, restaurarea din copie, criptarea și foaia ei de recuperare, utilizatorii, exporturile în Excel (lista pacienților, registrul), importul pacienților din fișier, importul stocului și mișcările stocului în Excel. Din rețea paginile lor se pot citi, dar nu schimba — în locul butoanelor scrie că acțiunea se face doar pe calculatorul principal.</p>
 <p>Calculatorul cu programul trebuie să fie pornit, iar programul — deschis sau lângă ceas. Telefonul se conectează la fel, prin Wi-Fi-ul clinicii: scanați codul QR.</p>
 </section>
 <section class="gs" id="sms"><div class="gh"><span class="gn">09</span><h2>Memento-uri SMS</h2></div>

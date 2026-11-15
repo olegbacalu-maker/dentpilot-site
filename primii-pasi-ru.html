@@ -311,6 +311,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .feat4.n5>:last-child:nth-child(odd){grid-column:1/-1}
 .pricepanel{padding:36px}.ptab-card{padding:8px 18px 18px}
 .law .two .scheme{order:2}
+.tabs{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:640px){
 .wrap{padding:0 18px}
@@ -320,7 +321,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 .show{margin-top:36px;padding:8px;border-radius:20px}
 .show-top{flex-direction:column;align-items:stretch;padding:2px 2px 10px}
 .crop{aspect-ratio:4/3}
-.tabs{flex-wrap:wrap}.tabs button{flex:1 1 40%}
+.tabs{grid-template-columns:repeat(2,minmax(0,1fr))}.tabs button{padding:0 8px}
 .crop img{width:185%;max-width:none;height:100%;object-fit:cover;object-position:left top;transform:translateX(var(--sx,0%))}
 .benefits{flex-direction:column;padding-top:24px}
 .feat4,.feat4.n5,.steps4,.det,.req .det,.pair{grid-template-columns:minmax(0,1fr)}
@@ -508,7 +509,7 @@ footer{padding:48px 0 32px;background:var(--bg)}
 <p>Шаг по желанию. Журнал один: не устанавливайте программу на второй компьютер — получится отдельная, пустая картотека.</p>
 <ol><li>На компьютере с программой: <span class="ui">Setări</span> › <span class="ui">Acces din rețea</span> › <span class="ui">Activează accesul</span>. Программа перезапустится.</li><li>Если появится кнопка <span class="ui">Creează regula de firewall</span>, нажмите её и подтвердите в Windows.</li><li>Запишите показанный адрес вида <code>http://192.168.x.x:8088/admin</code>. На странице есть и QR-код для телефона.</li><li>На втором компьютере откройте адрес в Chrome или Edge. В <span class="ui">Alegeți persoana</span> выберите своё имя, введите PIN и сохраните страницу в закладки.</li></ol>
 <div class="call warn"><b>Внимание</b><p>Доступ по сети включается, только когда у всех PIN не меньше 6 цифр.</p></div>
-<p>Несколько действий выполняются только на компьютере с программой: копия на флешку, папка резервных копий, восстановление из копии, шифрование и его лист восстановления, пользователи, выгрузки в Excel (список пациентов, журнал), импорт пациентов из файла. По сети эти страницы можно посмотреть, но не изменить — вместо кнопок написано, что действие выполняется только на главном компьютере.</p>
+<p>Несколько действий выполняются только на компьютере с программой: копия на флешку, папка резервных копий, восстановление из копии, шифрование и его лист восстановления, пользователи, выгрузки в Excel (список пациентов, журнал), импорт пациентов из файла, импорт склада и движения склада в Excel. По сети эти страницы можно посмотреть, но не изменить — вместо кнопок написано, что действие выполняется только на главном компьютере.</p>
 <p>Компьютер с программой должен быть включён, а программа — открыта или у часов. Телефон подключается так же, через Wi-Fi клиники: отсканируйте QR-код.</p>
 </section>
 <section class="gs" id="sms"><div class="gh"><span class="gn">09</span><h2>SMS-напоминания</h2></div>
